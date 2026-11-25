@@ -4,9 +4,9 @@
 
 Code, stored results, interval-arithmetic checks and a verification script for the paper by Taishi Namba (2026).
 
-**Paper:** T. Namba, *Every state keeps its arrow: an unconditional lower bound on the resolution gap of the arrow of time*, preprint, Zenodo (2026), doi: to be added.
+**Paper:** T. Namba, *Every state keeps its arrow: an unconditional lower bound on the resolution gap of the arrow of time*, preprint, Zenodo (2026), [doi:10.5281/zenodo.24531663](https://doi.org/10.5281/zenodo.24531663) (all versions).
 
-[![DOI](https://img.shields.io/badge/DOI-to%20be%20added-lightgrey.svg)](#citation)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24531663.svg)](https://doi.org/10.5281/zenodo.24531663)
 [![verify](https://github.com/neginyan/resolution-gap-every-state/actions/workflows/verify.yml/badge.svg)](https://github.com/neginyan/resolution-gap-every-state/actions/workflows/verify.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -84,7 +84,7 @@ The study was carried out with AI assistants (Anthropic Claude, Google Gemini an
 
 ## Citation
 
-Please cite the paper (doi: to be added) and this repository; see `CITATION.cff`. The code will be archived at Zenodo (doi: to be added).
+Please cite the paper ([doi:10.5281/zenodo.24531663](https://doi.org/10.5281/zenodo.24531663), all versions) and this repository; see `CITATION.cff`. The code is archived at Zenodo: [doi:10.5281/zenodo.24531112](https://doi.org/10.5281/zenodo.24531112) (all versions).
 
 ## License
 

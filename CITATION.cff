@@ -3,8 +3,8 @@ message: "If you use this code, please cite the paper and this repository."
 title: "resolution-gap-every-state: code, interval arithmetic and verification for 'Every state keeps its arrow: an unconditional lower bound on the resolution gap of the arrow of time'"
 type: software
 version: 1.0.0
-# doi: to be added when the code is archived at Zenodo
-date-released: 2026-11-24
+doi: 10.5281/zenodo.24531112
+date-released: 2026-11-25
 license: MIT
 repository-code: "https://github.com/neginyan/resolution-gap-every-state"
 authors:
@@ -28,4 +28,5 @@ preferred-citation:
   year: 2026
   publisher:
     name: "Zenodo"
+  doi: 10.5281/zenodo.24531663
   notes: "Preprint"
