@@ -1,0 +1,1999 @@
+{
+ "paper": "paper",
+ "n_entries": 208,
+ "n_hold": 208,
+ "by_kind": {
+  "cond": 28,
+  "eq": 59,
+  "lb": 13,
+  "lt": 1,
+  "oom": 2,
+  "round": 25,
+  "trunc": 5,
+  "ub": 75
+ },
+ "n_numbers_in_text": 196,
+ "uncovered": [],
+ "allow": [
+  {
+   "file": "02_main_theorem",
+   "number": "0.1",
+   "reason": "c_r = sqrt(0.1): a choice of the proof (region boundaries of Proposition 15)"
+  },
+  {
+   "file": "05_outside",
+   "number": "0.1",
+   "reason": "c_r = sqrt(0.1): a choice"
+  },
+  {
+   "file": "E_verification",
+   "number": "0.1",
+   "reason": "c_r = sqrt(0.1), quoted as an example of a definition"
+  },
+  {
+   "file": "07_assembly",
+   "number": "10",
+   "reason": "labels of the scenarios C/10 of Table 2"
+  },
+  {
+   "file": "07_assembly",
+   "number": "100",
+   "reason": "labels of the scenarios C/100 of Table 2"
+  },
+  {
+   "file": "07_assembly",
+   "number": "10^{-15}",
+   "reason": "the point at which (c) is evaluated (checked as cond in 02 and by c.* of ei_constants)"
+  }
+ ],
+ "allow_unused": [],
+ "failures": [],
+ "wrong_versions": [
+  {
+   "printed": "2.647",
+   "kind": "ub",
+   "what": "largest rho* in two dimensions, rounded the wrong way (first draft of Sec. 8)",
+   "caught": true,
+   "info": "true <= 2.6471815643885983"
+  },
+  {
+   "printed": "1.387",
+   "kind": "lb",
+   "what": "sqrt(4/ln 8) as printed in the working record",
+   "caught": true,
+   "info": "true >= 1.386936692085097"
+  },
+  {
+   "printed": "1.924",
+   "kind": "lb",
+   "what": "4/ln 8 as printed in the working record",
+   "caught": true,
+   "info": "true >= 1.923593387851951"
+  },
+  {
+   "printed": "9.7167",
+   "kind": "ub",
+   "what": "the third slip of the working record (EE-C, not used)",
+   "caught": true,
+   "info": "true <= 9.716726309956847"
+  },
+  {
+   "printed": "0.99999",
+   "kind": "lb",
+   "what": "J3 margin rounded up",
+   "caught": true,
+   "info": "true >= 0.9999829062461235"
+  },
+  {
+   "printed": "984.15",
+   "kind": "ub",
+   "what": "k_bar at 1.5e-14 rounded down",
+   "caught": true,
+   "info": "true <= 984.152276741379618514316398835373550503745210934224367264129"
+  },
+  {
+   "printed": "1810",
+   "kind": "lb",
+   "what": "J22 factor rounded up",
+   "caught": true,
+   "info": "true >= 1809.397763813155"
+  },
+  {
+   "printed": "1.2496656113",
+   "kind": "round",
+   "what": "the reviewer's 2A + N, which our quadrature does not reproduce beyond 6 digits",
+   "caught": true,
+   "info": "true = 1.24967"
+  },
+  {
+   "printed": "1266",
+   "kind": "ub",
+   "what": "C_O below 8 sqrt(224 112)",
+   "caught": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "printed": "1.6\\times10^{-14}",
+   "kind": "cond",
+   "what": "a range end beyond the solved sigma_0",
+   "caught": true,
+   "info": ""
+  }
+ ],
+ "wrong_versions_caught": 10,
+ "rows": [
+  {
+   "file": "00_abstract",
+   "printed": "1.5\\times10^{-14}",
+   "kind": "cond",
+   "what": "Theorem 1(b) at its range end (interval)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "00_abstract",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O >= 8 sqrt(224 112)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "00_abstract",
+   "printed": "289",
+   "kind": "ub",
+   "what": "C_Q >= 36.1 * 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "00_abstract",
+   "printed": "3.57",
+   "kind": "ub",
+   "what": "3.57 >= (3 * 2^{5/4})/2",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.5676213450081635"
+  },
+  {
+   "file": "00_abstract",
+   "printed": "10^{-15}",
+   "kind": "cond",
+   "what": "Theorem 1(c) at sigma = 1e-15 (interval)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "00_abstract",
+   "printed": "1.7\\times10^{-6}",
+   "kind": "lb",
+   "what": "0.75 alpha/(1268 * 17.01)",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0000017616026509678229"
+  },
+  {
+   "file": "00_abstract",
+   "printed": "6062",
+   "kind": "eq",
+   "what": "692 + 2449 + 2921 states of the records",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 6062"
+  },
+  {
+   "file": "01_introduction",
+   "printed": "1.5\\times10^{-14}",
+   "kind": "cond",
+   "what": "range end",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "01_introduction",
+   "printed": "289",
+   "kind": "ub",
+   "what": "C_Q",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "01_introduction",
+   "printed": "3.57",
+   "kind": "ub",
+   "what": "3.57",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.5676213450081635"
+  },
+  {
+   "file": "01_introduction",
+   "printed": "112",
+   "kind": "cond",
+   "what": "the threshold: 56 - c4 sqrt112 - 7.77 > 0",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "01_introduction",
+   "printed": "6062",
+   "kind": "eq",
+   "what": "number of recorded states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 6062"
+  },
+  {
+   "file": "01_introduction",
+   "printed": "9\\times10^{71}",
+   "kind": "round",
+   "what": "J18: 1 - wrong/true",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 9.27171e+71"
+  },
+  {
+   "file": "01_introduction",
+   "printed": "960",
+   "kind": "eq",
+   "what": "2^6 * 15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 960"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "112",
+   "kind": "cond",
+   "what": "threshold",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "289",
+   "kind": "ub",
+   "what": "C_Q",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "3.57",
+   "kind": "ub",
+   "what": "3.57",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.5676213450081635"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "10^{-4}",
+   "kind": "cond",
+   "what": "beta' and alpha at 1e-4",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "112",
+   "kind": "cond",
+   "what": "threshold",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "0.14",
+   "kind": "eq",
+   "what": "half of 112/400",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.14"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "0.284",
+   "kind": "ub",
+   "what": "beta' at 1e-4",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.2838178858024066"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "1.5\\times10^{-14}",
+   "kind": "cond",
+   "what": "range end",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "10^{-15}",
+   "kind": "cond",
+   "what": "(c)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "2.9\\times10^{-5}",
+   "kind": "lb",
+   "what": "O-term times k_bar at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0000299648610929626689995689140511461267345759737106104588397020"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "1.7\\times10^{-6}",
+   "kind": "lb",
+   "what": "(c) closed form",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0000017616026509678229"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "72.06",
+   "kind": "round",
+   "what": "L_bar at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 72.0602"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "1072.3",
+   "kind": "round",
+   "what": "k_bar at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1072.29"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "2.79\\times10^{-8}",
+   "kind": "round",
+   "what": "bound at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2.79447e-08"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "17",
+   "kind": "eq",
+   "what": "sqrt 289",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 17"
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "1.5\\times10^{-14}",
+   "kind": "cond",
+   "what": "range end",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "02_main_theorem",
+   "printed": "10^{-14}",
+   "kind": "oom",
+   "what": "the range end, in order of magnitude",
+   "context_found": true,
+   "holds": true,
+   "info": "log10 true = -13.824"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "7.136",
+   "kind": "ub",
+   "what": "3 * 2^{5/4}",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 7.135242690016327"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "36.1",
+   "kind": "ub",
+   "what": "total coefficient",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 35.96717250261498"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "289",
+   "kind": "ub",
+   "what": "36.1 * 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "74.2",
+   "kind": "ub",
+   "what": "e^4 + 19.57",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 74.16815003314424"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.12997",
+   "kind": "ub",
+   "what": "eta at L = 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.12996509635498973"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.016246",
+   "kind": "ub",
+   "what": "tau at L = 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.016245637044373717"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.13",
+   "kind": "cond",
+   "what": "eta <= 0.13 and the inequality there",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "2.55",
+   "kind": "ub",
+   "what": "E_bad",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.5456386655104315"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "34.13",
+   "kind": "ub",
+   "what": "outside E_bad",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 34.12858822219886"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "1.38693\\ldots",
+   "kind": "trunc",
+   "what": "sqrt(4/ln 8)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.386936692085"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "36.1",
+   "kind": "ub",
+   "what": "total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 35.96717250261498"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "289",
+   "kind": "ub",
+   "what": "36.1 * 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "3.568",
+   "kind": "ub",
+   "what": "(3 * 2^{5/4})/2",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.5676213450081635"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "19.57",
+   "kind": "ub",
+   "what": "(8 * 4 + 7.136)/2",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 19.5676213450081635"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "74.17",
+   "kind": "lt",
+   "what": "e^4 + 19.57",
+   "context_found": true,
+   "holds": true,
+   "info": "true < 74.1681500331442390781102612028608784027907370386140687258266"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "3103.7",
+   "kind": "round",
+   "what": "psi(4)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 3103.67"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.4",
+   "kind": "cond",
+   "what": "the alternative delta (interval)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.8",
+   "kind": "eq",
+   "what": "4L * 0.4/(4L) * 2",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.8"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.9453",
+   "kind": "round",
+   "what": "omega K_b^2 at L = 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.945322"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "1441",
+   "kind": "eq",
+   "what": "eg_circ: complex-time states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1441"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "889",
+   "kind": "eq",
+   "what": "of them with L >= 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 889"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "2449",
+   "kind": "eq",
+   "what": "two-dimensional states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2449"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "2921",
+   "kind": "eq",
+   "what": "one-variable states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2921"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.702",
+   "kind": "lb",
+   "what": "smallest inner-circle margin",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.7024773016009429"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "1.498",
+   "kind": "lb",
+   "what": "smallest three-circle margin",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 1.498368919667823"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "0.75",
+   "kind": "ub",
+   "what": "largest theta L",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.7497161337422595"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "1.06",
+   "kind": "ub",
+   "what": "largest F(1 - tau)/A",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1.0582870293013213"
+  },
+  {
+   "file": "05_outside",
+   "printed": "7.77",
+   "kind": "ub",
+   "what": "c1",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 7.762054006296538"
+  },
+  {
+   "file": "05_outside",
+   "printed": "960",
+   "kind": "eq",
+   "what": "2^6 * 15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 960"
+  },
+  {
+   "file": "05_outside",
+   "printed": "2.87",
+   "kind": "ub",
+   "what": "c2",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.866025403784439"
+  },
+  {
+   "file": "05_outside",
+   "printed": "2.03",
+   "kind": "ub",
+   "what": "c3",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.0265859980688896"
+  },
+  {
+   "file": "05_outside",
+   "printed": "4.5382",
+   "kind": "ub",
+   "what": "c4",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 4.538138384844605"
+  },
+  {
+   "file": "05_outside",
+   "printed": "0.2028\\ldots",
+   "kind": "trunc",
+   "what": "the threshold margin",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.202857674019"
+  },
+  {
+   "file": "05_outside",
+   "printed": "112",
+   "kind": "cond",
+   "what": "threshold",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "05_outside",
+   "printed": "1.291",
+   "kind": "ub",
+   "what": "sqrt15/3",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1.2909944487358056"
+  },
+  {
+   "file": "05_outside",
+   "printed": "8.4258",
+   "kind": "ub",
+   "what": "sqrt(2 sqrt1260)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 8.425731861221042"
+  },
+  {
+   "file": "05_outside",
+   "printed": "10^{-3}",
+   "kind": "cond",
+   "what": "140 at sigma = 1e-3",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "05_outside",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "05_outside",
+   "printed": "280",
+   "kind": "eq",
+   "what": "2 * 140",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 280"
+  },
+  {
+   "file": "05_outside",
+   "printed": "224",
+   "kind": "eq",
+   "what": "2 * 112",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 224"
+  },
+  {
+   "file": "05_outside",
+   "printed": "140",
+   "kind": "ub",
+   "what": "1.291 sqrt112 + 8.4258 sqrt224 + 112 sigma",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 139.88048700825703"
+  },
+  {
+   "file": "05_outside",
+   "printed": "1267.2",
+   "kind": "ub",
+   "what": "8 sqrt(224 * 112)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "05_outside",
+   "printed": "10^{-4}",
+   "kind": "cond",
+   "what": "beta' at 1e-4",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "05_outside",
+   "printed": "400",
+   "kind": "cond",
+   "what": "K_r = 400 is a choice; it enters 0.28 and beta'",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "05_outside",
+   "printed": "0.28",
+   "kind": "eq",
+   "what": "112/400",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.28"
+  },
+  {
+   "file": "05_outside",
+   "printed": "0.284",
+   "kind": "ub",
+   "what": "beta'",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.2838178858024066"
+  },
+  {
+   "file": "05_outside",
+   "printed": "492",
+   "kind": "eq",
+   "what": "J3 states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 492"
+  },
+  {
+   "file": "05_outside",
+   "printed": "0.99998",
+   "kind": "lb",
+   "what": "J3",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.9999829062461235"
+  },
+  {
+   "file": "05_outside",
+   "printed": "481",
+   "kind": "eq",
+   "what": "J22 states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 481"
+  },
+  {
+   "file": "05_outside",
+   "printed": "1809",
+   "kind": "lb",
+   "what": "J22: g/bound",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 1809.397763813155"
+  },
+  {
+   "file": "06_inside",
+   "printed": "7.77",
+   "kind": "ub",
+   "what": "c1",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 7.762054006296538"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.6455",
+   "kind": "ub",
+   "what": "sqrt15/6",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.6454972243679028"
+  },
+  {
+   "file": "06_inside",
+   "printed": "70.2",
+   "kind": "ub",
+   "what": "isotropic total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 69.7960332524633"
+  },
+  {
+   "file": "06_inside",
+   "printed": "12.56",
+   "kind": "ub",
+   "what": "e (16/9)^{1/4} 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 12.555205963152783"
+  },
+  {
+   "file": "06_inside",
+   "printed": "2.91",
+   "kind": "ub",
+   "what": "E_bad isotropic",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.904514094129701"
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.92359\\ldots",
+   "kind": "trunc",
+   "what": "4/ln 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.923593387851"
+  },
+  {
+   "file": "06_inside",
+   "printed": "69.80",
+   "kind": "ub",
+   "what": "isotropic total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 69.7960332524633"
+  },
+  {
+   "file": "06_inside",
+   "printed": "70.2",
+   "kind": "ub",
+   "what": "isotropic total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 69.7960332524633"
+  },
+  {
+   "file": "06_inside",
+   "printed": "562",
+   "kind": "ub",
+   "what": "70.2 * 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 561.6"
+  },
+  {
+   "file": "06_inside",
+   "printed": "70.2",
+   "kind": "ub",
+   "what": "isotropic total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 69.7960332524633"
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.9\\times10^{-8}",
+   "kind": "cond",
+   "what": "Theorem 19 at J0 (interval)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "06_inside",
+   "printed": "3.7505\\times10^{-7}",
+   "kind": "ub",
+   "what": "sigma^2 bound",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.75044981493104924253697779569074966985294379338866433058925E-7"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.0506605",
+   "kind": "lb",
+   "what": "alpha",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0506605898960663965175220741801684150186707444339828410771371"
+  },
+  {
+   "file": "06_inside",
+   "printed": "4.706\\times10^{-3}",
+   "kind": "ub",
+   "what": "h_O(J0)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.00470523927237054056889971453593621352479691575824770807824752"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.06860",
+   "kind": "ub",
+   "what": "Xi",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.0685947466820203409146523344120089058516522155280425557966098"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.6455",
+   "kind": "ub",
+   "what": "sqrt15/6",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.6454972243679028"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.09288",
+   "kind": "ub",
+   "what": "Xi^2/alpha",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.0928777039908863088221327416759709268118607427402009247583528"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.15238",
+   "kind": "ub",
+   "what": "Xi/(2 sqrt alpha)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.152379217735626852789203920356289913356786126074208587726513"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.00176",
+   "kind": "ub",
+   "what": "0.6455 sqrt(J0)/alpha",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.00175630904185680534525552570408379662074982354632692380873472"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.24702",
+   "kind": "ub",
+   "what": "the bracket",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.247013230768369966956592187736344636789396692360736436293601"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.24702",
+   "kind": "eq",
+   "what": "the sum of the three printed terms",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.24702"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.1",
+   "kind": "eq",
+   "what": "smallest sigma of the check",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.1"
+  },
+  {
+   "file": "06_inside",
+   "printed": "10^{-2}",
+   "kind": "eq",
+   "what": "blobs",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.01"
+  },
+  {
+   "file": "06_inside",
+   "printed": "10^{-4}",
+   "kind": "eq",
+   "what": "blobs",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.0001"
+  },
+  {
+   "file": "06_inside",
+   "printed": "3",
+   "kind": "ub",
+   "what": "largest |R'|/bound in per cent",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.8942710139964634"
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.3",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.3"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.45",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.45"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.7",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.7"
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.2",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.2"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.2",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.2"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.5",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.5"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.3",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.3"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.55",
+   "kind": "eq",
+   "what": "state",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.55"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.00988",
+   "kind": "round",
+   "what": "our R' (the reviewer's value agrees)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.00987845"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.2286",
+   "kind": "round",
+   "what": "our bound",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.228555"
+  },
+  {
+   "file": "06_inside",
+   "printed": "10^{-12}",
+   "kind": "ub",
+   "what": "difference of two grids",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 6.372680161348399E-14"
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.2496652",
+   "kind": "round",
+   "what": "our 2A + N",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.24967"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.00988",
+   "kind": "round",
+   "what": "our R'",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.00987845"
+  },
+  {
+   "file": "06_inside",
+   "printed": "0.2286",
+   "kind": "round",
+   "what": "our bound",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.228555"
+  },
+  {
+   "file": "06_inside",
+   "printed": "36",
+   "kind": "eq",
+   "what": "J29 states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 36"
+  },
+  {
+   "file": "06_inside",
+   "printed": "2\\times10^{-9}",
+   "kind": "cond",
+   "what": "the selection of J29",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "06_inside",
+   "printed": "1.2\\times10^{-6}",
+   "kind": "ub",
+   "what": "J29: largest |r0|",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.0000011421499483"
+  },
+  {
+   "file": "06_inside",
+   "printed": "200",
+   "kind": "eq",
+   "what": "engine states inside O",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 200"
+  },
+  {
+   "file": "06_inside",
+   "printed": "2.9\\times10^{-5}",
+   "kind": "ub",
+   "what": "largest |r0| inside O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.000028032275190245085"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.5\\times10^{-14}",
+   "kind": "cond",
+   "what": "range end",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "07_assembly",
+   "printed": "10^{-4}",
+   "kind": "cond",
+   "what": "inside the range of (a)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "07_assembly",
+   "printed": "280",
+   "kind": "eq",
+   "what": "2 * 140",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 280"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "112",
+   "kind": "cond",
+   "what": "threshold",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "07_assembly",
+   "printed": "2.5",
+   "kind": "cond",
+   "what": "psi'/psi < 2.5/L (interval, L = 4 and grid)",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "07_assembly",
+   "printed": "66.644",
+   "kind": "round",
+   "what": "L_bar at 1.5e-14",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 66.6441"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "984.16",
+   "kind": "ub",
+   "what": "k_bar at 1.5e-14",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 984.152276741379618514316398835373550503745210934224367264129"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.8719\\times10^{-8}",
+   "kind": "ub",
+   "what": "J inside O at 1.5e-14",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1.87185763036210403693422979058488049305812339119689474653638E-8"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "984",
+   "kind": "lb",
+   "what": "k_bar at 1.5e-14 (k_bar decreases with sigma)",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 984.152276741379618514316398835373550503745210934224367264038"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "3.1\\times10^{-5}",
+   "kind": "ub",
+   "what": "O-term times k_bar",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.0000299648610929626689995517834961117918130416688307236032902049"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "0.12",
+   "kind": "lb",
+   "what": "fourth term of (a) times k_bar",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.126572113832388209704336169056561945497761129806895892980327"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "72.060",
+   "kind": "round",
+   "what": "L_bar at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 72.0602"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1072.3",
+   "kind": "ub",
+   "what": "k_bar at 1e-15",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1072.29251357020667355706625999720132396471470910457315110467"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "2.996\\times10^{-5}",
+   "kind": "lb",
+   "what": "O-term times k_bar",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0000299648610929626689995689140511461267345759737106104588397020"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "72",
+   "kind": "lb",
+   "what": "L_bar at 1e-15 (L_bar increases as sigma decreases)",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 72.0601597420801161782438304645173844780730923251832734774486"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "0.0735",
+   "kind": "ub",
+   "what": "at L = 72",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 0.07343814641256534"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "289.1",
+   "kind": "ub",
+   "what": "289 + 0.0735",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 289.0735"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "17.01",
+   "kind": "ub",
+   "what": "sqrt 289.1",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 17.002940922087568"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "0.75",
+   "kind": "eq",
+   "what": "3/4",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.75"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.76\\times10^{-6}",
+   "kind": "lb",
+   "what": "0.75 alpha/(1268 17.01)",
+   "context_found": true,
+   "holds": true,
+   "info": "true >= 0.0000017616026509678229"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "101",
+   "kind": "eq",
+   "what": "eh_constants + ei_constants",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 101"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "60",
+   "kind": "eq",
+   "what": "precision of eh_iv",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 60"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "289",
+   "kind": "ub",
+   "what": "C_Q",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 288.8"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "562",
+   "kind": "ub",
+   "what": "C_h",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 561.6"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.94\\times10^{-8}",
+   "kind": "round",
+   "what": "best J0",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.93881e-08"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.6\\times10^{-14}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.55551e-14"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "1.7\\times10^{-13}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.68742e-13"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "5.1\\times10^{-14}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 5.11244e-14"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "2.5\\times10^{-13}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2.46585e-13"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "2.7\\times10^{-12}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2.69575e-12"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "2.0\\times10^{-12}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.95933e-12"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "3.1\\times10^{-10}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 3.09359e-10"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "4.9\\times10^{-8}",
+   "kind": "round",
+   "what": "range",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 4.88882e-08"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "10^{-4}",
+   "kind": "oom",
+   "what": "J20: largest J/(112 s^2 + 1268 s k_bar)",
+   "context_found": true,
+   "holds": true,
+   "info": "log10 true = -4.003"
+  },
+  {
+   "file": "07_assembly",
+   "printed": "3.57",
+   "kind": "ub",
+   "what": "3.57",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 3.5676213450081635"
+  },
+  {
+   "file": "06_inside",
+   "printed": "15",
+   "kind": "eq",
+   "what": "E Z^6 = 15; sqrt15/6 is checked as 0.6455",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 15"
+  },
+  {
+   "file": "04_three_circles",
+   "printed": "16",
+   "kind": "eq",
+   "what": "delta = 1/(4L) at L = 4",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 16"
+  },
+  {
+   "file": "05_outside",
+   "printed": "16",
+   "kind": "eq",
+   "what": "the factor 4 of Paper F, squared",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 16"
+  },
+  {
+   "file": "06_inside",
+   "printed": "16",
+   "kind": "eq",
+   "what": "16/(9T) <= 16/9 (interval check of App. C)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 16"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "2.700",
+   "kind": "ub",
+   "what": "largest rho*, one variable",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.6997984545500224"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "2921",
+   "kind": "eq",
+   "what": "one-variable states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2921"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "2.648",
+   "kind": "ub",
+   "what": "largest rho*, two dimensions",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 2.6471815643885983"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "2449",
+   "kind": "eq",
+   "what": "two-dimensional states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2449"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "36.1",
+   "kind": "ub",
+   "what": "total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 35.96717250261498"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "960",
+   "kind": "eq",
+   "what": "2^6 * 15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 960"
+  },
+  {
+   "file": "08_outlook",
+   "printed": "112",
+   "kind": "cond",
+   "what": "threshold",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "08_outlook",
+   "printed": "1268",
+   "kind": "ub",
+   "what": "C_O",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1267.1353518862932"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "960",
+   "kind": "eq",
+   "what": "2^6 * 15",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 960"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "15",
+   "kind": "eq",
+   "what": "E Z^6 = 15 (Gaussian sixth moment)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 15"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "7.136",
+   "kind": "ub",
+   "what": "3 * 2^{5/4}",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 7.135242690016327"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "1.291",
+   "kind": "ub",
+   "what": "sqrt15/3",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 1.2909944487358056"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "105",
+   "kind": "eq",
+   "what": "E Z^8 = 105",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 105"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "1680",
+   "kind": "eq",
+   "what": "E (Z_v + Z_w)^8 = 105 * 2^4",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1680"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "420",
+   "kind": "eq",
+   "what": "sqrt(105 * 1680)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 420"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "1260",
+   "kind": "eq",
+   "what": "3 * 420",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1260"
+  },
+  {
+   "file": "B_borrowed",
+   "printed": "8.4258",
+   "kind": "ub",
+   "what": "sqrt(2 sqrt1260)",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 8.425731861221042"
+  },
+  {
+   "file": "C_constants",
+   "printed": "60",
+   "kind": "eq",
+   "what": "precision",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 60"
+  },
+  {
+   "file": "C_constants",
+   "printed": "2\\times10^7",
+   "kind": "round",
+   "what": "largest L of the grid",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.94469e+07"
+  },
+  {
+   "file": "C_constants",
+   "printed": "10^{-15}",
+   "kind": "eq",
+   "what": "grid",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1E-15"
+  },
+  {
+   "file": "C_constants",
+   "printed": "10^{-300}",
+   "kind": "eq",
+   "what": "grid",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1E-300"
+  },
+  {
+   "file": "C_constants",
+   "printed": "101",
+   "kind": "eq",
+   "what": "number of claims",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 101"
+  },
+  {
+   "file": "C_constants",
+   "printed": "1.38693\\ldots",
+   "kind": "trunc",
+   "what": "sqrt(4/ln 8)",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.386936692085"
+  },
+  {
+   "file": "C_constants",
+   "printed": "1.387",
+   "kind": "eq",
+   "what": "the slip as printed in the record",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.387"
+  },
+  {
+   "file": "C_constants",
+   "printed": "1.92359\\ldots",
+   "kind": "trunc",
+   "what": "4/ln 8",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.923593387851"
+  },
+  {
+   "file": "C_constants",
+   "printed": "1.924",
+   "kind": "eq",
+   "what": "the slip as printed",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1.924"
+  },
+  {
+   "file": "C_constants",
+   "printed": "36.1",
+   "kind": "ub",
+   "what": "total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 35.96717250261498"
+  },
+  {
+   "file": "C_constants",
+   "printed": "70.2",
+   "kind": "ub",
+   "what": "isotropic total",
+   "context_found": true,
+   "holds": true,
+   "info": "true <= 69.7960332524633"
+  },
+  {
+   "file": "D_joints",
+   "printed": "692",
+   "kind": "eq",
+   "what": "engine states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 692"
+  },
+  {
+   "file": "D_joints",
+   "printed": "200",
+   "kind": "eq",
+   "what": "engine states inside O",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 200"
+  },
+  {
+   "file": "D_joints",
+   "printed": "2449",
+   "kind": "eq",
+   "what": "two-dimensional states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2449"
+  },
+  {
+   "file": "D_joints",
+   "printed": "2921",
+   "kind": "eq",
+   "what": "one-variable states",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 2921"
+  },
+  {
+   "file": "D_joints",
+   "printed": "0.5",
+   "kind": "cond",
+   "what": "J1: the defect is within the accuracy filter 0.5 %",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "D_joints",
+   "printed": "10^{-24}",
+   "kind": "cond",
+   "what": "an engine sigma",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "D_joints",
+   "printed": "9\\times10^{71}",
+   "kind": "round",
+   "what": "J18",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 9.27171e+71"
+  },
+  {
+   "file": "D_joints",
+   "printed": "10^{-6}",
+   "kind": "eq",
+   "what": "smallest sigma inside O",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 0.000001"
+  },
+  {
+   "file": "D_joints",
+   "printed": "10^{-12}",
+   "kind": "cond",
+   "what": "engine states at this sigma, none inside O",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "D_joints",
+   "printed": "10^{-24}",
+   "kind": "cond",
+   "what": "engine states at this sigma, none inside O",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "D_joints",
+   "printed": "10^{-36}",
+   "kind": "cond",
+   "what": "engine states at this sigma, none inside O",
+   "context_found": true,
+   "holds": true,
+   "info": ""
+  },
+  {
+   "file": "E_verification",
+   "printed": "10^{-9}",
+   "kind": "eq",
+   "what": "FLOAT_RTOL of verification/common.py",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 1E-9"
+  },
+  {
+   "file": "03_chain",
+   "printed": "9\\times10^{71}",
+   "kind": "round",
+   "what": "J18",
+   "context_found": true,
+   "holds": true,
+   "info": "true = 9.27171e+71"
+  }
+ ],
+ "ok": true
+}

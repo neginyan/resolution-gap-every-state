@@ -1,0 +1,25 @@
+\section{Borrowed lemmas}
+\label{app:borrowed}
+
+\begin{lemma}[Paper~F, Lemma~G2]\label{lem:G2}
+For every state, in raw coordinates, $\BF=\frac{\sigma^4}2\E[\cos m_zH_{pz}]-\frac{\sigma^4}2\E[\sin m_z(s_vH_{vz}-s_wH_{wz})]$, $R_3=T_2+R_L$ with $T_2=-\frac{\sigma^4}2\E[\sin m_z\,\partial_{pzz}\ln\varrho]$ and $|R_L|\le(\sqrt{960}/6)\sigma^2$.
+\end{lemma}
+\begin{proof}\proofst\
+$\partial_vm_z=1/\sqrt2-\sigma^2H_{vz}$ (and likewise for $w$) gives $\BF$, after $\frac{\sigma^2}2\E[s_p\sin m_z]=-\frac{\sigma^2}2\E[\partial_p\sin m_z]=\frac{\sigma^4}2\E[\cos m_zH_{pz}]$ (Lemma~\ref{lem:ibp}).
+With $\zeta=X_z-m_z$, $f_0(X_z)=f_0(m_z)+\varphi\zeta+\frac12\sin m_z\zeta^2+\rho_L$, $|\rho_L|\le|\zeta|^3/6$; $\Cov(X_p,X_z\mid y)=-\sigma^4H_{pz}$ and $\Cov(X_p,\zeta^2\mid y)=\sigma^6\partial_{pzz}\ln\varrho$ (Lemma~\ref{lem:tweedie}).
+$R_L=-\sigma^{-2}\E\Cov(X_p,\rho_L\mid Y)$, and Cauchy--Schwarz twice gives $|R_L|\le\frac{\sigma^{-2}}6\sqrt{\E\Var(X_p\mid Y)}\sqrt{\E\zeta^6}$ with $\E\Var(X_p\mid Y)\le\sigma^2$ and $\E\zeta^6\le2^6\cdot15\sigma^6$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:K}]\proofst\
+Units $\sigma=1$.
+(Paper~F's $\keff$.) $\partial_w\sqrt\varrho=\frac12\sqrt\varrho s_w$ and $\partial_v\partial_w\sqrt\varrho=\frac12\sqrt\varrho(\partial_vs_w+\frac12s_vs_w)$, so $\keff^2=K/A$; the scaling $y=\sigma y'$ removes $\sigma$.
+(The identity.) $K=D+\E[s_vs_w\partial_vs_w]+\frac14\mathrm{S2}$ with $D=\E[(\partial_vs_w)^2]$, and $\E[s_vs_w\partial_vs_w]=\frac12\int\partial_v\varrho\,\partial_v(s_w^2)=-\frac12\E[s_w^2\partial_v^2\varrho/\varrho]=-\frac12(\mathrm{S2}+\mathrm{SV})+\frac12A$ by Lemmas~\ref{lem:ibp} and~\ref{lem:tweedie}.
+Since $\partial_v\partial_w\varrho/\varrho=\partial_vs_w+s_vs_w=\E[Z_vZ_w\mid Y]$, $Q_2=D+2\E[s_vs_w\partial_vs_w]+\mathrm{S2}=D-\mathrm{SV}+A$, which gives $K=Q_2+\frac12\mathrm{SV}-\frac12A-\frac14\mathrm{S2}$.
+(The half lemma.) $\mathrm{S2}+\mathrm{SV}=\E[s_w^2Z_v^2]$. Cut at $Z_v^2=8L$: the inside is at most $8LA$; on the outside, H\"older and $\E s_w^4\le3$ give $\le\sqrt3\,(\E[Z_v^4e^{(Z_v^2-8L)/4}])^{1/2}=\sqrt3\,(3\cdot2^{5/2})^{1/2}A=3\cdot2^{5/4}A\le7.136A$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:EEC}]\proofst\
+Dimensionless. With $\Gamma=1-\Ht_{ww}-\Ht_{vw}=\Cov(Z_w,Z_v+Z_w\mid Y)$ and $\cos m_z=1-\varphi$, $\tilde C_wB=\E[\st_v^2\Gamma]-\E[\st_v^2\varphi\Gamma]$.
+First, $\E[\st_v^2\Ht_{ww}]=A-\mathrm{SV}\le A$ (integrate by parts as in Lemma~\ref{lem:K}), and $\E[\st_v^2\Ht_{vw}]=\E[\st_v^3\st_w]/3$, which is at most $\sqrt{15A}/3$ in absolute value; so $\E[\st_v^2\Gamma]\ge B-A-1.291\sqrt A$.
+Second, $\Gamma^2\le\E[Z_w^2\mid Y]\E[(Z_v+Z_w)^2\mid Y]$ gives $\E\Gamma^4\le(105\cdot1680)^{1/2}=420$, $\E[\st_v^2\Gamma^2]\le\sqrt{3\cdot420}$, and with $\E[\st_v^2\varphi^2]\le2\theta B$, $|\E[\st_v^2\varphi\Gamma]|\le(2\sqrt{1260})^{1/2}\sqrt{\theta B}\le8.4258\sqrt{\theta B}$.
+\end{proof}

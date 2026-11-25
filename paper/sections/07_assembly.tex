@@ -1,0 +1,52 @@
+\section{Proof of Theorem~\ref{thm:main} and the range of $\sigma$}
+\label{sec:assembly}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]\proofst\
+(a) is Proposition~\ref{prop:outside}.
+
+(b) Outside $\Oset$, (a) applies ($1.5\times10^{-14}\le10^{-4}$).
+Inside $\Oset$, Lemma~\ref{lem:EFO} and $\keff\le\kb$ (Theorem~\ref{thm:circles} with Lemma~\ref{lem:CR}) give $B\le\sigma\max(280,1268\kb)=1268\sigma\kb$, since $\kb\ge1$; and $A<112\sigma^2$.
+So $J\le112\sigma^2+1268\sigma\kb$.
+The right side increases with $\sigma$: as $\alpha$ depends on $\sigma$, $d\Lb/d\ell=2-2\sigma^2/(\pi^2+\sigma^2)\in(0,2)$, and
+\[
+\frac{d\ln(\sigma\kb)}{d\ell}=-1+\frac12\,\frac{\psi'(\Lb)}{\psi(\Lb)}\,\frac{d\Lb}{d\ell}<-1+\frac{\psi'(\Lb)}{\psi(\Lb)}<0,
+\]
+because $\psi'/\psi<2.5/L\le1$ for $L\ge4$ (each of the two terms of $\psi$ has logarithmic derivative below $2.5/L$).
+At $\sigma=1.5\times10^{-14}$, $\Lb=66.644$, $\kb\le984.16$ and $J\le1.8719\times10^{-8}\le J_0$.
+Theorem~\ref{thm:EGO} gives $g\ge\frac34A/(\sigma(A+B))=\frac34/(\sigma(1+B/A))$, and $B/A\le1268\sigma\kb/(\alpha\sigma^2)$ gives the bound of (b).
+It is the smallest of the five terms: for $\kb\ge984$ it is below $3.1\times10^{-5}/\kb$, while the fourth term of (a) is above $0.12/\kb$ and the other three do not depend on $\kb$.
+
+(c) At $\sigma=10^{-15}$, $\Lb=72.060$ and $\kb\le1072.3$; $\frac34\alpha/(\alpha\sigma+1268\kb)\ge2.996\times10^{-5}/\kb$.
+For $\Lb\ge72$, $(4\Lb+3.57)(\ln2\Lb)^{3/2}/\Lb^{5/2}\le0.0735$ decreases, so $\kb\le\sqrt{289.1}\,\Lb^{5/4}/(\ln2\Lb)^{3/4}\le17.01\,\Lb^{5/4}/(\ln2\Lb)^{3/4}$, and $0.75\,\alpha/(1268\cdot17.01)\ge1.76\times10^{-6}$.
+\end{proof}
+
+\paragraph*{Every constant by interval arithmetic.}
+All constants used above, $101$ claims in total, were recomputed with outward-rounded decimal interval arithmetic at $60$ digits; all hold (App.~\ref{app:constants}).
+
+\paragraph*{The range of $\sigma$.}
+Inside $\Oset$ the proof needs $112\sigma^2+C_O\sigma\kb(\sigma)\le J_0$, where $C_O=1268$ comes from Lemma~\ref{lem:EFO}, $\kb$ contains $C_Q=289$ of Theorem~\ref{thm:circles}, and $J_0$ is fixed by $C_h=562$ of Lemma~\ref{lem:sm} through the bracket of Theorem~\ref{thm:EGO}.
+Solving for the largest $\sigma$ gives the following \derivst:
+
+\begin{table}[h]
+\caption{The largest $\sigma$ for which the argument inside $\Oset$ closes, when the constants are changed \derivst. ``Sharp $T1$'' means $\keff^2\le L+4$.}
+\label{tab:range}
+\begin{ruledtabular}
+\begin{tabular}{lc}
+constants & $\sigma_0$\\
+\hline
+as proved (best $J_0=1.94\times10^{-8}$) & $1.6\times10^{-14}$\\
+$C_O/10$ & $1.7\times10^{-13}$\\
+$C_Q/10$ & $5.1\times10^{-14}$\\
+$C_h/10$ & $2.5\times10^{-13}$\\
+$C_O/10$ and $C_h/10$ & $2.7\times10^{-12}$\\
+sharp $T1$ & $2.0\times10^{-12}$\\
+sharp $T1$, $C_O/10$, $C_h/10$ & $3.1\times10^{-10}$\\
+sharp $T1$, $C_O/100$, $C_h/100$ & $4.9\times10^{-8}$
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+$\sigma_0$ moves roughly as $1/C_O$ and $1/C_h$, and only weakly with $C_Q$, which enters through a square root.
+Tuning constants alone does not reach $\sigma\sim10^{-4}$.
+The reason is the form of Theorem~\ref{thm:EGO}: it bounds $\Wzz$ by the absolute smallness $J\le J_0$, while inside $\Oset$ the information $J$ can be as large as $\sigma\kb$.
+On the recorded states inside $\Oset$, the actual $J$ is about $10^{-4}$ of $112\sigma^2+1268\sigma\kb$ \numst, so Lemma~\ref{lem:EFO} is very far from tight.

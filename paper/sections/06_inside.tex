@@ -1,0 +1,77 @@
+\section{Inside the open set: the observed point}
+\label{sec:inside}
+
+Inside $\Oset$ the information is of order $\sigma^2$ in $w$, and Lemma~\ref{lem:EF1} is useless there: its first term $7.77\sigma^2$ does not shrink relative to $2\Aw+\Nphi\sim\sigma^2$.
+The reason is that the expansion of Paper~E is taken around the posterior mean $m_z$, and its Lagrange remainder carries no factor of the information.
+We expand around the observed point instead.
+Let $f_0(x)=x-\sin x$, $\varphi_0=1-\cos Y_z$,
+\begin{equation}
+\begin{gathered}
+\Aw^0=\E[\st_w^2(1-\tfrac14\varphi_0)],\qquad \Nphi^0=\tfrac12\E[\st_v^2\varphi_0],\\ \Wzz=\E[Z_z^2-1\mid Y]=\sigma^2\partial_z^2\varrho/\varrho .
+\end{gathered}
+\end{equation}
+
+\begin{lemma}[Expansion around the observed point]\label{lem:EGD}
+For every state with \textup{(M1)},
+\[
+\begin{gathered}
+\sigma(A+B)\,g=2\Aw^0+\Nphi^0+E_2+R',\\ E_2=\tfrac\sigma2\E[\st_p\sin Y_z\,\Wzz],\\ |R'|\le\tfrac{\sqrt{15}}6\sigma^2\sqrt{\E\st_p^2}\le0.6455\,\sigma^2\sqrt{J} .
+\end{gathered}
+\]
+Moreover $|E_2|\le\frac\sigma2\sqrt U\,\|\Wzz\|_2$ with $U=\E[\st_p^2\sin^2Y_z]\le4\Nphi^0+A$, and $\Aw^0\ge A/2$.
+\end{lemma}
+\begin{proof}\proofst\
+By Proposition~\ref{prop:gap}, $\sigma(A+B)g=2A+N$ with $N=\sigma^{-1}\E[\st_p(Y)(f_0(X_z)-f_0(Y_z))]$, and $X_z=Y_z-\sigma Z_z$.
+Taylor's formula ($f_0'=1-\cos$, $f_0''=\sin$, $|f_0'''|\le1$) gives $f_0(Y_z-\sigma Z_z)-f_0(Y_z)=-\sigma Z_z\varphi_0+\frac{\sigma^2}2Z_z^2\sin Y_z+\rho_D$ with $|\rho_D|\le\sigma^3|Z_z|^3/6$.
+The first-order term gives $-\E[\st_p\varphi_0Z_z]=\E[\st_p\st_z\varphi_0]$, and $\st_p\st_z=\frac12(\st_v^2-\st_w^2)$.
+In the second-order term, $\E[\st_p\sin Y_z]=-\sigma\E[\partial_p\sin y_z]=0$ by Lemma~\ref{lem:ibp}, since $y_z$ does not depend on $p$; so $\E[Z_z^2\mid Y]$ may be replaced by $\Wzz$, which gives $E_2$.
+The third-order term is at most $\frac{\sigma^2}6\|\st_p\|_2(\E Z_z^6)^{1/2}$ with $\E Z_z^6=15$, and $\st_p^2\le\st_v^2+\st_w^2$.
+Collecting, $2A-\frac12\E[\st_w^2\varphi_0]=2\Aw^0$. The bound on $U$ uses $\sin^2\le2\varphi_0$.
+\end{proof}
+
+The single second-order quantity left is $\Wzz$.
+It is controlled by the three circles in the isotropic flow.
+Let $\varrho^{\rm iso}_t=\tilde\rho*N(0,tI_2)$ in units $\sigma=1$, let $e$ be a unit vector, and let $I_e(t)=\E[(\partial_e\ln\varrho^{\rm iso}_t)^2]$ be the Fisher information in the direction $e$.
+
+\begin{lemma}[Isotropic three circles]\label{lem:iso}
+If $I_e(1)\le e^{-4}$ and $L_e=\ln(1/I_e(1))$, then, with $\delta,T,\eta,\tau,r_1,r_2,r_3$ of Theorem~\ref{thm:circles} built from $L_e$, $I_e(1-\tau)\le70.2\,(L_e/\ln2L_e)\,I_e(1)$.
+\end{lemma}
+\begin{proof}\proofst\
+The proof of Theorem~\ref{thm:circles} with $q_z=\partial_e\varrho^{\rm iso}_z=-\int((y-x)\cdot e/z)\,\gaussk^{(2)}_z(y-x)\,d\tilde\rho$ and two-dimensional kernels.
+Outer circle: Cauchy--Schwarz and both formulas of Lemma~\ref{lem:kernel} give $\|q_z\|^2\le T^3/(T^2-r^2)^2$, which is $16/(9T)\le16/9$ at $r=T/2$.
+Inner circle: a two-dimensional kernel integral is the square of a one-dimensional one, so $\|q_z\|^2\le I_e(1)/(1-(r/\delta)^2)\le I_e(1)/\eta$.
+Holomorphy: as in Lemma~\ref{lem:holo}, with the dominating function $G_{\mathcal K}(y)=C_{\mathcal K}\int e^{-c_{\mathcal K}|y-x|^2}\,|(y-x)\cdot e|^2\,d\tilde\rho(x)$, which is integrable by the second formula of Lemma~\ref{lem:kernel}.
+Three circles: $\|q_{1-\tau}\|^2\le e(16/9)^{1/4}(4L_e/\ln2L_e)I_e(1)\le12.56(L_e/\ln2L_e)I_e(1)$, since $\vartheta<1/L_e\le\frac14$.
+Return: $\varrho^{\rm iso}_{1-\tau}=(T/(1-\tau))\varrho^{\rm iso}_TW$ with $W=\E[e^{-\omega|Z|^2}\mid Y_T]$, $q^2/\varrho\le(T^2/(1-\tau)^3)\varrho_T\E[Z_e^2\mid Y_T]$, and in two dimensions $P(|Z|>K_b)=e^{-K_b^2/2}=I_e(1)^2$ exactly.
+The contribution of $E_{\rm bad}$ is at most $\sqrt6\,T^2(1-\tau)^{-3}I_e(1)\le2.91\,I_e(1)$, the rest at most $2e\cdot12.56(L_e/\ln2L_e)I_e(1)$, and $L_e/\ln2L_e\ge4/\ln8=1.92359\ldots$; the total coefficient is at most $69.80\le70.2$.
+\end{proof}
+
+\begin{lemma}[Diagonal smoothing]\label{lem:sm}
+For every $u\in(0,1)$, $\E[(\partial_e^2\varrho^{\rm iso}_1/\varrho^{\rm iso}_1)^2]\le I_e(1-u)/u$. If $I_e(1)\le e^{-4}$, this is at most $\hO(I_e(1))$, where $\hO(x)=562\,x\,(\ln\frac1x)^3/(\ln(2\ln\frac1x))^2$.
+\end{lemma}
+\begin{proof}\proofst\
+Write $Y=Y'+\sqrt uZ_2$ with $Y'\sim\varrho^{\rm iso}_{1-u}$; from $\varrho_1=\varrho_{1-u}*\gaussk_u$, $\partial_e^2\varrho_1/\varrho_1=-u^{-1/2}\E[Z_{2,e}\,\partial_e\ln\varrho_{1-u}(Y')\mid Y]$; use Jensen and independence.
+With $u=\tau$ and Lemma~\ref{lem:iso}, $70.2\cdot8\le562$.
+\end{proof}
+
+\begin{theorem}[Small information]\label{thm:EGO}
+Let \textup{(M1)} and \textup{(H2)} hold, and let $J=A+B\le J_0=1.9\times10^{-8}$. Then $|E_2+R'|\le\frac14(2\Aw^0+\Nphi^0)$, and therefore
+\[
+g\ \ge\ \frac34\,\frac{A}{\sigma(A+B)} .
+\]
+\end{theorem}
+\begin{proof}\proofst\
+\emph{The size of $\sigma$.} Lemma~\ref{lem:CR} gives $A\ge\alpha\sigma^2$, so $\sigma^2\le2J(\pi^2+\sigma^2)$, i.e.\ $\sigma^2\le2\pi^2J/(1-2J)\le3.7505\times10^{-7}$, and $\alpha\ge0.0506605$.
+\emph{The second derivative.} In units $\sigma=1$, $\Wzz=\partial_z^2\varrho^{\rm iso}_1/\varrho^{\rm iso}_1$ with $e=e_z$, and $I_z(1)=\E[\st_z^2]\le J$.
+By (H2) and the argument of Lemma~\ref{lem:CR}, $I_z(1)\ge2\alpha\sigma^2>0$.
+$\hO$ increases on $(0,e^{-4}]$, because $d\ln\hO/d\ln x=1-3/L+2/(L\ln2L)>0$ for $L=\ln(1/x)\ge4$; so Lemma~\ref{lem:sm} gives $\Xi^2:=\|\Wzz\|_2^2\le\hO(J_0)\le4.706\times10^{-3}$ and $\Xi\le0.06860$.
+\emph{The remainders.} By Lemma~\ref{lem:EGD}, $|E_2|\le\sigma\Xi\sqrt{\Nphi^0}+\frac{\sigma\Xi}2\sqrt A\le\frac14\Nphi^0+\sigma^2\Xi^2+\frac{\sigma\Xi}2\sqrt A\le\frac14\Nphi^0+\big(\frac{\Xi^2}\alpha+\frac{\Xi}{2\sqrt\alpha}\big)A$, using $\sigma^2\le A/\alpha$; and $|R'|\le0.6455\,\sigma^2\sqrt J\le(0.6455\sqrt{J_0}/\alpha)A$.
+The bracket is $0.09288+0.15238+0.00176\le0.24702\le\frac14$.
+As $A\le2\Aw^0$, $|E_2+R'|\le\frac14(\Nphi^0+A)\le\frac14(2\Aw^0+\Nphi^0)$; insert into Lemma~\ref{lem:EGD}, and use $2\Aw^0+\Nphi^0\ge A$.
+\end{proof}
+
+\paragraph*{Numerical check.}
+Lemma~\ref{lem:EGD} was checked without quadrature error on a three-point mixture ($\sigma=1$ to $0.1$) and on two Gaussian blobs by plain quadrature ($\sigma=10^{-2}$, $10^{-4}$): $|R'|$ stays below $3\%$ of its bound \numst.
+One of the two reviews of the manuscript (OpenAI ChatGPT) checked it independently on another three-point mixture, with points $(0,0)$, $(1.3,0.45)$, $(-0.7,1.2)$ in $(z,p)$, weights $0.2$, $0.5$, $0.3$ and $\sigma=0.55$, and found $|R'|=0.00988$ against the bound $0.6455\,\sigma^2\sqrt J=0.2286$.
+Our recomputation of that state (\code{src/ei\_point.py}, a quadrature converged to $10^{-12}$) gives $2A+N=1.2496652$, $R'=0.00988$ and the bound $0.2286$ \numst.
+On the $36$ recorded states with $J\le2\times10^{-9}$ and (H2), the ratio $|E_2+R'|/(2\Aw^0+\Nphi^0)$ is at most $1.2\times10^{-6}$, and on all $200$ engine states inside $\Oset$ at most $2.9\times10^{-5}$ (the engine's quadrature defect taken out), against the $\frac14$ the theorem needs \numst.

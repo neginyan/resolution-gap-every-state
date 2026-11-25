@@ -1,0 +1,83 @@
+\section{Setting and main result}
+\label{sec:main}
+
+\subsection{The state, the observer and the gap}
+A \emph{state} is a probability measure $\rho$ on $\mathbb R^2$; $X\sim\rho$.
+We assume
+\begin{equation}
+\text{(M1)}\quad \E|X|<\infty,\qquad\qquad \text{(H2)}\quad \Var(X_z)\le\pi^2 .
+\label{eq:assumptions}
+\end{equation}
+No density is required.
+The observer sees $Y=X+\sigma Z$ with $Z\sim N(0,I_2)$ independent of $X$ and $\sigma>0$; we write $Z=(Y-X)/\sigma$ throughout.
+The blurred density is $\varrho=\rho*N(0,\sigma^2 I)$ (we keep $p$ for a coordinate), and $\E$ is the expectation over $Y\sim\varrho$.
+Coordinates $(v,w)$ are the unstable and stable directions of the pendulum at its upper equilibrium, and
+$z=(v+w)/\sqrt2$, $p=(v-w)/\sqrt2$.
+(H2) is part of the problem: the observer looks at the neighbourhood of the equilibrium, one period of the pendulum in $z$.
+
+With the score $s=\nabla\ln\varrho$ and $f(x)=(x_p,\sin x_z)$ in the $(z,p)$ components, the critical rate and the gap of Paper~E are
+\begin{equation}
+R=\frac{\E\big[s\cdot\E[f(X)\mid Y]\big]}{\sigma^2\E|s|^2},\qquad g=\frac{1-R}{\sigma}.
+\end{equation}
+
+\paragraph*{Dimensionless quantities.}
+$\st=\sigma s=-\E[Z\mid Y]$ and $\Ht=-\sigma^2\nabla^2\ln\varrho=I-\Cov(Z\mid Y)$ (Tweedie, Lemma~\ref{lem:tweedie}).
+\begin{equation}
+A=\sigma^2\Jww=\E[\st_w^2],\quad B=\sigma^2\Jvv=\E[\st_v^2],\quad J=A+B .
+\end{equation}
+With the posterior mean $m=\E[X\mid Y]$ and $\varphi=1-\cos m_z$, let $\theta=\E[\st_v^2\varphi]/B$ and
+\begin{equation}
+M=A+\tfrac12\theta B,\qquad \Oset=\{M<112\,\sigma^2\}.
+\label{eq:Oset}
+\end{equation}
+The effective wavenumber of Paper~F is $\keff^2=\sigma^2\int(\partial_v\partial_w\sqrt\varrho)^2/\int(\partial_w\sqrt\varrho)^2$; in dimensionless form $\keff^2=K/A$ with $K=\E[(\partial_v\st_w+\tfrac12\st_v\st_w)^2]$ (Lemma~\ref{lem:K}).
+Finally $\ell=\ln(1/\sigma)$, $\alpha=1/(2(\pi^2+\sigma^2))$ and
+\begin{equation}
+\begin{gathered}
+\psi(L)=289\,\frac{L^{5/2}}{(\ln2L)^{3/2}}+4L+3.57,\\ \Lb=2\ell+\ln\frac1\alpha,\qquad \kb=\sqrt{\psi(\Lb)} .
+\end{gathered}
+\label{eq:psi}
+\end{equation}
+
+\subsection{The main theorem}
+
+\begin{theorem}[Every state keeps a gap]\label{thm:main}
+Let $\rho$ satisfy \textup{(M1)} and \textup{(H2)}, and let $c_r=\sqrt{0.1}$.
+\begin{enumerate}
+\item[(a)] If $0<\sigma\le10^{-4}$ and $M\ge112\sigma^2$, then
+\[
+g\ \ge\ \min\Big\{1,\ \frac{c_r}{2\sqrt\ell},\ 0.14(1-2\sigma),\ \frac{(1-2\sigma)(1-0.284)}{4\sqrt2\,\kb}\Big\}.
+\]
+\item[(b)] If $0<\sigma\le1.5\times10^{-14}$, then for every state
+\[
+g\ \ge\ \frac34\,\frac{\alpha}{\alpha\sigma+1268\,\kb},
+\]
+and this is the smallest of the five lower bounds of (a) and (b).
+\item[(c)] If $0<\sigma\le10^{-15}$, then for every state
+\[
+g\ \ge\ \frac{2.9\times10^{-5}}{\kb}\ \ge\ 1.7\times10^{-6}\,\frac{(\ln2\Lb)^{3/4}}{\Lb^{5/4}} .
+\]
+\end{enumerate}
+\proofst
+\end{theorem}
+
+The proof is assembled in Section~\ref{sec:assembly}.
+At $\sigma=10^{-15}$ one has $\Lb=72.06$ and $\kb=1072.3$, so the bound of (b) is $2.79\times10^{-8}$.
+As $\sigma\to0$, $\kb\sim17\,\Lb^{5/4}/(\ln2\Lb)^{3/4}$ and $\Lb\sim2\ell$, so (c) reads $g\ge c'(\ln\ell)^{3/4}/\ell^{5/4}$.
+
+\begin{remark}[What the theorem does not say]\label{rem:limits}
+The power $5/4$ is larger than the conjectured $1/2$ of~\eqref{eq:conj1}; it comes from the factor $L^{5/2}$ in $\psi$.
+The constant is small, and the range $\sigma\le1.5\times10^{-14}$ is narrow.
+For $10^{-14}\lesssim\sigma\le10^{-4}$ part (a) still covers every state outside $\Oset$; inside $\Oset$ the theorem says nothing there.
+We state these limits because they are exactly what the next steps must improve (Section~\ref{sec:outlook}), not because the result is conditional: within its range, it holds for every state.
+\end{remark}
+
+\subsection{In the observer's words}
+The observer cannot choose the state.
+It may be smooth or rough, concentrated on a few points or spread over the whole neighbourhood, with fine structure in one direction and none in the other.
+Whatever it is, the observer's reconstruction of the unstable motion stays measurably slower than the true motion.
+The loss per unit of resolution, $g$, shrinks as the lens sharpens, but only like a power of $\ln(1/\sigma)$, never like a power of $\sigma$.
+Three facts carry this.
+A state cannot hide its fine structure from a slightly blurrier lens: when the $v$-noise is lowered a little, the information about the stable direction grows by at most a polynomial in $\ln(1/A)$ (Theorem~\ref{thm:circles}).
+When the information is not small, the error of the observer's formula is at most half of what it explains.
+And when the information is small, the observer should read the motion at the point it sees rather than at the point it infers; there the error is proportional to the information itself.

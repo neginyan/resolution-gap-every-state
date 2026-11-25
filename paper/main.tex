@@ -1,0 +1,43 @@
+\documentclass[aps,pre,twocolumn,superscriptaddress,nofootinbib]{revtex4-2}
+\input{preamble}
+
+\begin{document}
+
+% Paper K, version 1.0 (lab stage EI). Title: candidate 1 of stage EI (the main session decides; candidates in the report).
+\title{\texorpdfstring{Every state keeps its arrow:\\ an unconditional lower bound on the resolution gap of the arrow of time}{Every state keeps its arrow: an unconditional lower bound on the resolution gap of the arrow of time}}
+
+\author{Taishi Namba}
+\email{neginyan@gmail.com}
+\affiliation{Independent Researcher, Atsugi, Kanagawa, Japan}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_main_theorem}
+\input{sections/03_chain}
+\input{sections/04_three_circles}
+\input{sections/05_outside}
+\input{sections/06_inside}
+\input{sections/07_assembly}
+\input{sections/08_outlook}
+
+\input{sections/10_back_matter}
+
+\appendix
+% results of the appendices are numbered A1, A2, ... (one counter per appendix)
+\makeatletter\@addtoreset{theorem}{section}\makeatother
+\renewcommand{\thetheorem}{\thesection\arabic{theorem}}
+\setcounter{theorem}{0}
+\input{sections/A_parts}
+\input{sections/B_borrowed}
+\input{sections/C_constants}
+\input{sections/D_joints}
+\input{sections/E_verification}
+
+\input{sections/11_references}
+
+\end{document}

@@ -1,0 +1,54 @@
+\section{Introduction}
+\label{sec:intro}
+
+A state of a mechanical system that is seen through finite resolution loses part of its dynamics.
+Paper~E~\cite{E} made this precise for the simplest unstable motion, the pendulum near its upper equilibrium, $\dot z=p$, $\dot p=\sin z$, whose expansion rate is $\kappa=1$.
+An observer who sees the state $X$ only through $Y=X+\sigma Z$, $Z\sim N(0,I_2)$, reconstructs a drift from the score of the blurred density, and the rate $R$ that this drift reaches is smaller than $\kappa$.
+The resolution gap $g=(\kappa-R)/\sigma$ measures the loss per unit of resolution.
+Paper~E proved $g\ge c/\ell$ on states without fine structure and conjectured the logarithmic law
+\begin{equation}
+g\;\ge\;\frac{c'}{\sqrt{\ell+C'}},\qquad \ell=\ln(1/\sigma),
+\label{eq:conj1}
+\end{equation}
+for every state (its Conjecture~1).
+
+The lower side of~\eqref{eq:conj1} has since been proved for states built from windows: a smooth envelope that carries a periodic ripple in the stable direction.
+Paper~F~\cite{F} proved it in two of three cases and left the third open.
+Paper~H~\cite{H} closed the third case for windows with a weak ripple of any number of harmonics.
+Paper~I~\cite{I} let the observer focus anywhere, and Paper~J~\cite{J} let the ripple be as strong as the window class allows.
+All of these results are about states of a given shape.
+A state that is not a window, for example one whose information sits in many scattered spots, was outside them.
+
+This paper removes the shape.
+Theorem~\ref{thm:main} gives a lower bound on $g$ for every probability measure on the plane with a finite first moment that is confined to the neighbourhood of the equilibrium, $\Var(X_z)\le\pi^2$.
+The bound decays like $\ell^{-5/4}(\ln\ell)^{3/4}$.
+That is slower than any power of $\sigma$, so the gap never closes at a finite resolution, but faster than the conjectured $\ell^{-1/2}$.
+It holds for $\sigma\le1.5\times10^{-14}$, and its constant is small.
+We regard the theorem as the first statement of the logarithmic law that asks nothing of the shape of the state, and its power as the present one.
+
+\paragraph*{What is new.}
+Three steps make the shape irrelevant.
+\begin{enumerate}
+\item A bound on the effective wavenumber, $\keff^2\le\psi(\ln(1/A))$ with $\psi(L)=289L^{5/2}/(\ln2L)^{3/2}+4L+3.57$, for every state (Theorem~\ref{thm:circles}).
+Papers~F and~H needed such a bound and had it only as a conjecture or for windows.
+The proof goes through complex time: the stable-direction score of the density with $v$-noise $z$ is a holomorphic function of $z$ with values in a Hilbert space, and Hadamard's three-circle theorem transports its smallness at $z=1$ to $z$ slightly below one.
+The three-circle argument was proposed by Google Gemini, one of the AI assistants used in this work (see the Acknowledgments), and checked here line by line and numerically at every step.
+\item A threshold for the remainder of Paper~E's gap formula: once the $w$-information and the curved $v$-information together exceed $112\sigma^2$, the remainder is at most half of the main terms (Lemma~\ref{lem:EF2}).
+So every remainder estimate is needed only on an open set $\Oset$ of states with information of order $\sigma^2$.
+\item On $\Oset$ the gap is expanded around the observed point $Y_z$ instead of the posterior mean $m_z$ (Lemma~\ref{lem:EGD}).
+The state-independent remainder $(\sqrt{960}/6)\sigma^2$ of the old expansion disappears; the new remainder carries $\sqrt{A+B}$, and the single second-order quantity left, $\Wzz=\sigma^2\partial_z^2\varrho/\varrho$, is controlled by the same three circles in the isotropic flow (Lemmas~\ref{lem:iso} and~\ref{lem:sm}).
+\end{enumerate}
+The rest of the chain is borrowed from Papers~E and~F and from the lab stages behind this paper; Section~\ref{sec:chain} shows how it fits together, and the appendices state every borrowed lemma in the notation used here.
+
+\paragraph*{How the results are checked.}
+Every statement carries one of the labels \proofst, \derivst, \numst\ or \conjst.
+There is no computer-assisted step in the proof of Theorem~\ref{thm:main}: every constant is a closed form.
+We nevertheless recomputed all of them with outward-rounded interval arithmetic (App.~\ref{app:constants}), and we evaluated every joint of the chain, the conclusion of one lemma inserted into the hypothesis of the next, on $6062$ recorded states (App.~\ref{app:joints}).
+That check found three printed rounded values whose direction was wrong in the working record; the constants derived from them hold when recomputed.
+It also reproduces, as a deliberately wrong version, an earlier slip in a power of $\sigma$, which fails by a factor of $9\times10^{71}$.
+
+\paragraph*{Plan.}
+Section~\ref{sec:main} states the setting and Theorem~\ref{thm:main}.
+Section~\ref{sec:chain} shows the chain.
+Sections~\ref{sec:circles}--\ref{sec:inside} prove the three new steps, and Section~\ref{sec:assembly} assembles the proof and discusses the range of $\sigma$.
+Section~\ref{sec:outlook} lists what remains between Theorem~\ref{thm:main} and the conjecture~\eqref{eq:conj1}.

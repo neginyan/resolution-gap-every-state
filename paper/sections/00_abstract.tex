@@ -1,0 +1,16 @@
+An observer sees a state of the pendulum near its upper equilibrium through Gaussian noise of width $\sigma$, and the resolution gap $g$ measures how much of the true expansion rate the blurred description loses.
+Paper~E~\cite{E} conjectured that $g$ never falls below $c'/\sqrt{\ell+C'}$, $\ell=\ln(1/\sigma)$, whatever the state; Papers~F, H, I and~J~\cite{F,H,I,J} proved the lower side for states built from a class of windows.
+Here we prove a lower bound for every state, with no condition on its shape.
+The only assumptions are a finite first moment and the confinement of the problem itself, $\Var(X_z)\le\pi^2$.
+For every such state and every $\sigma\le1.5\times10^{-14}$,
+\[
+g\;\ge\;\frac{3}{4}\,\frac{\alpha}{\alpha\sigma+1268\,\kb},\qquad \kb^2=289\,\frac{\Lb^{5/2}}{(\ln2\Lb)^{3/2}}+4\Lb+3.57,
+\]
+with $\alpha=1/(2(\pi^2+\sigma^2))$ and $\Lb=2\ell+\ln(1/\alpha)$; for $\sigma\le10^{-15}$ this gives $g\ge1.7\times10^{-6}\,(\ln2\Lb)^{3/4}/\Lb^{5/4}$ \proofst.
+The present power $\ell^{-5/4}(\ln\ell)^{3/4}$ is below the conjectured $\ell^{-1/2}$, the constants are small and the range of $\sigma$ is narrow; we state all three plainly.
+Three steps carry the proof.
+A three-circle argument in complex time bounds the second-order spread of the posterior for every state: $\keff^2\le289\,L^{5/2}/(\ln2L)^{3/2}+4L+3.57$ with $L=\ln(1/A)$, $A=\sigma^2\Jww$.
+Outside an open set $\Oset$ where the $w$-information is of order $\sigma^2$, the remainder of the gap formula is at most half of its main terms.
+Inside $\Oset$, an expansion of the gap around the observed point instead of the posterior mean has a remainder of order $\sigma^2\sqrt{\Jww+\Jvv}$, and the same complex-time argument in the isotropic flow controls the one second-order quantity left.
+Every constant was recomputed with outward-rounded interval arithmetic, and every joint of the chain was evaluated on $6062$ recorded states without a failure \numst.
+We state what is proved, what is derived and what is numerical, and what remains open: the power $\ell^{-1/2}$ and the range $\sigma>1.5\times10^{-14}$.

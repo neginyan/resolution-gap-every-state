@@ -1,0 +1,428 @@
+{
+ "n_engine": 692,
+ "n_engine_in_O": 200,
+ "identity_K_worst": [
+  [
+   0.008557590194877273,
+   "EE ee_fc_two.json",
+   "two straight points",
+   1e-36
+  ],
+  [
+   0.006713499575441767,
+   "EE ee_fc_two.json",
+   "two straight points",
+   1e-36
+  ],
+  [
+   0.0007707426429807185,
+   "EG ef_wide_0.0001_absM.json",
+   "M",
+   0.0001
+  ],
+  [
+   0.0005360202684831701,
+   "EG ef_wide_0.0001_absM.json",
+   "M",
+   0.0001
+  ]
+ ],
+ "n_identity_K_rel_gt_1e-3": 15,
+ "n_H2": 678,
+ "n_no_H2": 14,
+ "regions": {
+  "1": 137,
+  "2": 264,
+  "3": 0,
+  "4": 88
+ },
+ "n_J_le_e4": 244,
+ "n_J_le_2e9": 38,
+ "n_J_le_2e9_H2": 36,
+ "sigma_of_J_le_2e9": [
+  1e-06
+ ],
+ "joints": [
+  {
+   "J": "J1",
+   "items": "[4]",
+   "what": "branch identity [4] in the engine: 1 - |sigma(A+B) g - (2A_w + N_phi) - (B_F + R3)|/(sigma(A+B) g)/0.005 (the accuracy filter of EE)",
+   "n": 692,
+   "min_margin": 0.10929257053996955,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J2",
+   "items": "[5]->[6]",
+   "what": "EF-1: |B_F + R3| <= 7.77 s^2 + 2.87 s sqrt(theta B) + 2.03 s sqrt(A)   (B_F + R3 = -eps D_F of the engine)",
+   "n": 692,
+   "min_margin": 0.677893083937172,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J3",
+   "items": "[6]->[7]",
+   "what": "EF-2 (outside O, M >= 112 s^2): |B_F + R3| <= M/2  (B_F + R3 = -eps D_F)",
+   "n": 492,
+   "min_margin": 0.9999829062461235,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J4",
+   "items": "[7]->[23]",
+   "what": "EF-2 conclusion: g / ((a) + (a')) >= 1/2 outside O",
+   "n": 492,
+   "min_margin": 0.4955662089068811,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "g/((a)+(a')) - 1/2",
+   "note": ""
+  },
+  {
+   "J": "J5",
+   "items": "[4](b)",
+   "what": "M <= 2 A_w + N_phi (A_w >= A/2, N_phi = theta B/2): sigma (A + B)((a) + (a')) - M >= 0",
+   "n": 692,
+   "min_margin": 8.628175276467722e-16,
+   "holds": true,
+   "tol": 1e-09,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J6",
+   "items": "[9]",
+   "what": "k_eff^2 of paper F (X_int, at_tools) = K/A of the ED sums: 1 - |rel. difference|/1e-3",
+   "n": 692,
+   "min_margin": 0.999806760565435,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "1 - |rel diff|/1e-3",
+   "note": ""
+  },
+  {
+   "J": "J7",
+   "items": "[11]",
+   "what": "K = D + A/2 - SV/2 - S2/4 (ED lemma 3; a proved equality, checked as the accuracy of the sums): 1 - |res|/(1e-2 max(K, A/2))",
+   "n": 692,
+   "min_margin": 0.14424098051227274,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "1 - |res|/(1e-2 max(K, A/2))",
+   "note": "relative to K alone the residual reaches 0.79 on states with K/A ~ 1e-16 (cancellation of A/2 - SV/2); relative to max(K, A/2) it is <= 1e-3 except on the two states of the two-straight-points family at sigma = 1e-36 (0.86 %)"
+  },
+  {
+   "J": "J8",
+   "items": "[10]",
+   "what": "ED half lemma: S2 + SV <= 8 A L + 7.136 A  (engine)",
+   "n": 692,
+   "min_margin": 0.9871515721193952,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J9",
+   "items": "[10]",
+   "what": "ED half lemma, SV part: SV <= 8 A L + 7.136 A  (2-D closed-form families)",
+   "n": 2449,
+   "min_margin": 0.8708451410931126,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J10",
+   "items": "[12,18]->[23]",
+   "what": "Theorem EG-1 (iv): (Q2 + SV/2)/A <= psi(max(L,4))  (2-D families; Q2, SV from the sums)",
+   "n": 2449,
+   "min_margin": 0.9987492920198933,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J11",
+   "items": "[18]->[23]",
+   "what": "Theorem EG-1 (v): k_eff^2 = K/A <= psi(max(L, 4))  (engine)",
+   "n": 692,
+   "min_margin": 0.999970933781873,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J12",
+   "items": "[12]",
+   "what": "K <= Q2 + SV/2 is used through D = Q2 + SV - A; on the engine: K - D - A/2 + SV/2 = -S2/4 <= 0",
+   "n": 692,
+   "min_margin": 6.3231132730825746e-09,
+   "holds": true,
+   "tol": 1e-12,
+   "unit": "(S2/4)/K >= 0",
+   "note": ""
+  },
+  {
+   "J": "J13",
+   "items": "[8]",
+   "what": "EE-3 (states with (H2)): A >= alpha sigma^2",
+   "n": 678,
+   "min_margin": 4.61570826396762,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "A/(alpha s^2) - 1",
+   "note": ""
+  },
+  {
+   "J": "J14",
+   "items": "[8]->[28]",
+   "what": "L = ln(1/A) <= L_bar = 2 ln(1/sigma) + ln(1/alpha)  ((H2))",
+   "n": 678,
+   "min_margin": 1.7255677180749913,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "L_bar - L",
+   "note": ""
+  },
+  {
+   "J": "J15",
+   "items": "[8,18]->[22,23]",
+   "what": "k_eff <= k_bar(sigma)  ((H2))",
+   "n": 678,
+   "min_margin": 0.9963550138035668,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J16",
+   "items": "[20]",
+   "what": "EE-C improved: C~_w >= 1 - (A + 1.291 sqrt A)/B - 8.4258 sqrt(theta/B)",
+   "n": 692,
+   "min_margin": 0.0,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "difference",
+   "note": ""
+  },
+  {
+   "J": "J17",
+   "items": "[19]->[21]",
+   "what": "EF-3(b): sigma^2 C~_w^2 B^2 <= 16 theta B k_eff^2 A  (the factor sigma^2 is the joint of EF)",
+   "n": 692,
+   "min_margin": -1.1504915620186296e-07,
+   "holds": true,
+   "tol": 2e-05,
+   "unit": "relative margin (>= 0 holds)",
+   "note": "paper F dictionary states are equality cases; tolerance = quadrature"
+  },
+  {
+   "J": "J18",
+   "items": "[19]",
+   "what": "the same without sigma^2 (as first written in the instruction of stage EF): breaks",
+   "n": 1,
+   "min_margin": -9.271709632791912e+71,
+   "holds": false,
+   "tol": 0.0,
+   "unit": "power check: expected to break",
+   "note": "",
+   "expected_to_break": true,
+   "holds_as_power_check": true
+  },
+  {
+   "J": "J19",
+   "items": "[22]",
+   "what": "EF-O inside O: B <= sigma max(280, 1268 k_eff)",
+   "n": 200,
+   "min_margin": 0.8696116584155654,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J20",
+   "items": "[22,8,18]->[28]",
+   "what": "inside O ((H2)): A + B <= 112 sigma^2 + 1268 sigma k_bar",
+   "n": 194,
+   "min_margin": 0.999900768415282,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J21",
+   "items": "[23]",
+   "what": "Theorem EF (I) region by region, with the actual k_eff: g >= region bound",
+   "n": 489,
+   "min_margin": 3.0415454564004376,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "g/bound - 1",
+   "note": ""
+  },
+  {
+   "J": "J22",
+   "items": "[23]->[28]",
+   "what": "Theorem EG (a) (outside O, sigma <= 1e-4, (H2)): g >= min{1, c/(2 sqrt l), 0.14(1-2s), (1-2s)(1-0.284)/(4 sqrt2 k_bar)}",
+   "n": 481,
+   "min_margin": 1808.397763813155,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "g/bound - 1",
+   "note": ""
+  },
+  {
+   "J": "J23",
+   "items": "[20]->[23]",
+   "what": "region 4: C~_w >= 1 - beta'",
+   "n": 88,
+   "min_margin": 0.20232419949254554,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "difference",
+   "note": ""
+  },
+  {
+   "J": "J24",
+   "items": "[24]",
+   "what": "EG-D on two Gaussian blobs (plain quadrature, stage EG): 1 - |R'|/bound",
+   "n": 2,
+   "min_margin": 0.9839768006927131,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J25",
+   "items": "[24]",
+   "what": "EG-D on the three points, sigma = 1 .. 0.1 (stage EG): 1 - |R'|/bound",
+   "n": 4,
+   "min_margin": 0.9710572898600354,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J26",
+   "items": "[24]",
+   "what": "EG-D on 247 engine states: 1 - |R_corr|/(bound + engine tolerance)  (record of stage EG)",
+   "n": 247,
+   "min_margin": 0.3023924099772852,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J27",
+   "items": "[24]",
+   "what": "EG-D: A_w0 >= A/2 and |E2| <= (sigma/2) sqrt(U) ||W_zz||",
+   "n": 247,
+   "min_margin": 0.9381143690260905,
+   "holds": true,
+   "tol": 0.0,
+   "unit": ">= 0",
+   "note": ""
+  },
+  {
+   "J": "J28",
+   "items": "[25,26]->[27]",
+   "what": "EG-iso + EG-sm: ||W_zz||_2^2 <= h(A + B)  (states with A + B <= e^-4)",
+   "n": 244,
+   "min_margin": 0.9999852339229733,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "relative margin (>= 0 holds)",
+   "note": ""
+  },
+  {
+   "J": "J29",
+   "items": "[27]",
+   "what": "EG-O (A + B <= 2e-9, (H2)): |r0| <= 1/4  (r0 with the engine defect taken out)",
+   "n": 36,
+   "min_margin": 0.2499988578500517,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "1/4 - |r0|",
+   "note": ""
+  },
+  {
+   "J": "J30",
+   "items": "[27]",
+   "what": "EG-O (A + B <= 2e-9, (H2)): g >= (3/4) A/(sigma (A + B))",
+   "n": 36,
+   "min_margin": 0.7809924395056083,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "g/bound - 1",
+   "note": ""
+  },
+  {
+   "J": "J31",
+   "items": "[27]",
+   "what": "outside the hypotheses ((H2) fails; 2 states): |r0| <= 1/4 all the same",
+   "n": 2,
+   "min_margin": 0.2499973992564013,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "1/4 - |r0|",
+   "note": ""
+  },
+  {
+   "J": "J32",
+   "items": "[14-18]",
+   "what": "eg_circ 2d: every step of the three-circle proof (stage EG record): min ln(right/left)",
+   "n": 10,
+   "min_margin": 0.7134104064257135,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "ln(right/left)",
+   "note": ""
+  },
+  {
+   "J": "J33",
+   "items": "[14-18]",
+   "what": "eg_circ iso: every step of the three-circle proof (stage EG record): min ln(right/left)",
+   "n": 10,
+   "min_margin": 1.3965435672208173,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "ln(right/left)",
+   "note": ""
+  },
+  {
+   "J": "J34",
+   "items": "[14-18]",
+   "what": "eg_circ 1d: every step of the three-circle proof (stage EG record): min ln(right/left)",
+   "n": 10,
+   "min_margin": 0.7024773016009429,
+   "holds": true,
+   "tol": 0.0,
+   "unit": "ln(right/left)",
+   "note": ""
+  }
+ ],
+ "env": {
+  "python": "3.13.18",
+  "numpy": "2.5.3"
+ },
+ "ok": true
+}

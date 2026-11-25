@@ -1,0 +1,16 @@
+\section{How to verify}
+\label{app:verify}
+\begingroup\raggedright   % long code paths: no stretched lines
+
+The repository (\url{\Krepourl}) holds the code, the stored records and two entry points.
+\begin{itemize}
+\item \code{verification/\allowbreak quick.py} (under a minute, no other repository) re-runs the interval arithmetic of App.~\ref{app:constants}, the joints of App.~\ref{app:joints} from the stored records, the range of Table~\ref{tab:range}, the independent checks on point masses and Gaussian blobs of Lemmas~\ref{lem:smooth}, \ref{lem:circles}, \ref{lem:EGD} and~\ref{lem:sm} (the three-point state of the review of the manuscript included), the tables of Apps.~\ref{app:constants} and~\ref{app:joints}, which it regenerates from the records, and the check of the printed numbers.
+\item \code{verification/\allowbreak run\_all.py} \code{--e-repo~E} \code{--f-repo~F} runs \code{quick.py} and then every step of the three circles on the recorded states (Theorem~\ref{thm:circles}, Lemmas~\ref{lem:iso} and~\ref{lem:sm}), the real-time conclusions of Theorem~\ref{thm:circles} on the two-dimensional states, and engine states re-evaluated afresh without cache; it reads Paper~E's text to confirm the formulas quoted in Propositions~\ref{prop:gap} and~\ref{prop:branch}, and imports Paper~F's engine from its published repository (with \code{--full}, all engine states afresh).
+\end{itemize}
+Every re-run is made in a temporary copy and compared with the stored record entry by entry with the comparison of the published \code{common.py} of Papers~I and~J (booleans, integers and strings exactly, double-precision floats up to a relative $10^{-9}$); the stored records are never overwritten.
+
+\paragraph*{The printed numbers.}
+\code{verification/\allowbreak text\_numbers.py} reads every number of this paper that comes from a computation from the \LaTeX\ source and recomputes it from the stored records or the interval arithmetic.
+A value printed as a bound is checked for its direction: an upper bound must not be below the true value, and a lower bound must not be above it; a rounded value must be the true value rounded to the printed digits.
+An inventory makes sure that every distinct number of the running text is either checked or is a definition (such as $c_r=\sqrt{0.1}$), and the script rejects ten deliberately wrong versions, among them the three slips of App.~\ref{app:constants}.
+\par\endgroup

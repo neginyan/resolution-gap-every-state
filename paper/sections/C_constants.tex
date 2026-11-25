@@ -1,0 +1,16 @@
+\section{The constants by interval arithmetic}
+\label{app:constants}
+
+No step of the proof is computer-assisted: every constant is a closed form.
+To exclude arithmetic slips we recomputed every one of them with a small interval arithmetic on Python's \code{decimal} module (\code{src/eh\_iv.py}): $60$ digits, the lower end rounded down and the upper end rounded up in every $+,-,\times,/$, and $\sqrt\cdot$, $\exp$, $\ln$ correctly rounded and then widened by one unit in the last place on each side; $\pi$ enters as an interval from its decimal expansion.
+A claim holds when the whole enclosure of the exact expression lies on the stated side of the value used in the text.
+Claims for all $L\ge4$ or all $\sigma\le\sigma_0$ are proved in the text by monotonicity; the table checks their end points, and \code{src/eh\_constants.py} also samples them on logarithmic grids ($L=4$ to $2\times10^7$, $\sigma=10^{-15}$ to $10^{-300}$).
+All $101$ claims of Table~\ref{tab:constants} hold.
+
+The same check of the rounded values printed in the working record found three that were rounded in the wrong direction for the way they were used (Table~\ref{tab:printed}).
+Two of them enter this paper, in Theorem~\ref{thm:circles} ($\sqrt{4/\ln8}=1.38693\ldots$, printed as $1.387$ and used as a lower bound) and Lemma~\ref{lem:iso} ($4/\ln8=1.92359\ldots$, printed as $1.924$); the text now uses the correct values, and the constants $36.1$ and $70.2$ derived from them hold unchanged.
+The third belongs to a lemma that the chain does not use.
+
+\input{sections/C_printed}
+
+\input{sections/C_table}

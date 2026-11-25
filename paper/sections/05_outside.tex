@@ -1,0 +1,90 @@
+\section{The remainder outside the open set}
+\label{sec:outside}
+
+Paper~E writes the gap through a branch identity (Proposition~\ref{prop:branch}):
+\begin{equation}
+\begin{gathered}
+\sigma(A+B)\,g=2\Aw+\Nphi+(\BF+R_3),\\ \Aw=\E[\st_w^2(1-\tfrac14\varphi)],\quad \Nphi=\tfrac12\E[\st_v^2\varphi]=\tfrac12\theta B ,
+\end{gathered}
+\label{eq:branch}
+\end{equation}
+with a remainder $\BF+R_3$ that Paper~F's Lemma~G2 splits into three parts (Lemma~\ref{lem:G2}).
+We write $\BF$ for the remainder term that Papers~E and~F call $B$, to keep $B$ for the information $\sigma^2\Jvv$.
+Since $1-\varphi/4\in[\frac12,1]$, $\Aw\ge A/2$ and $M=A+\frac12\theta B\le2\Aw+\Nphi$.
+The branches are $(a)=2\Aw/(\sigma(A+B))$ and $(a')=\Nphi/(\sigma(A+B))$.
+
+\begin{lemma}[Numerator]\label{lem:EF1}
+For every state, $|\BF+R_3|\le c_1\sigma^2+c_2\sigma\sqrt{\theta B}+c_3\sigma\sqrt A$ with
+$c_1=\frac{\sqrt3}2+\sqrt3+\frac{\sqrt{960}}6\le7.77$, $c_2=(2\sqrt2+\sqrt{3/2})/\sqrt2\le2.87$, $c_3=(2\sqrt2+\sqrt{3/2})/2\le2.03$.
+\end{lemma}
+\begin{proof}\proofst\
+Integrate the term $T_2=-\frac{\sigma^4}2\E[\sin m_z\,\partial_{pzz}\ln\varrho]$ of Lemma~\ref{lem:G2} once in $p$ (Lemma~\ref{lem:ibp}): $\partial_{pzz}\ln\varrho=-\partial_pH_{zz}$ and $\partial_pm_z=-\sigma^2H_{pz}$ give $T_2=-\frac{\sigma^4}2\E[\sin m_z\,s_pH_{zz}]+\frac{\sigma^6}2\E[\cos m_z\,H_{pz}H_{zz}]$.
+In dimensionless form, with $H_{vz}=(H_{zz}+H_{pz})/\sqrt2$, $H_{wz}=(H_{zz}-H_{pz})/\sqrt2$ and $s_p=(s_v-s_w)/\sqrt2$,
+\[
+\begin{aligned}
+\BF+R_3={}&\tfrac{\sigma^2}2\E[\cos m_z\Ht_{pz}]+\tfrac{\sigma^2}2\E[\cos m_z\Ht_{pz}\Ht_{zz}]+R_L\\ &-\tfrac\sigma2\E[\sin m_z\,\st_vX_+]+\tfrac\sigma2\E[\sin m_z\,\st_wX_-],
+\end{aligned}
+\]
+$X_\pm=\sqrt2\Ht_{zz}\pm\Ht_{pz}/\sqrt2$.
+By Tweedie, $\Ht_{zz}=1-V$ with $V=\Var(Z_z\mid Y)\ge0$, $(1-V)^2\le1+V^2$ and $\E V^2\le\E Z_z^4=3$, so $\|\Ht_{zz}\|_2\le2$; $\Ht_{pz}=-\Cov(Z_p,Z_z\mid Y)$ gives $\|\Ht_{pz}\|_2\le\sqrt3$; so $\|X_\pm\|_2\le2\sqrt2+\sqrt{3/2}$.
+With $\sin^2m_z=\varphi(2-\varphi)\le2\varphi$, $\E[\st_v^2\varphi]=\theta B$, $\E\st_w^2=A$, $|R_L|\le(\sqrt{960}/6)\sigma^2$ and Cauchy--Schwarz term by term, the claim follows.
+\end{proof}
+
+\begin{lemma}[Threshold]\label{lem:EF2}
+If $M\ge112\sigma^2$, then $|\BF+R_3|\le\frac12M\le\frac12(2\Aw+\Nphi)$, and therefore $g\ge\frac12\big((a)+(a')\big)$.
+\end{lemma}
+\begin{proof}\proofst\
+By Cauchy--Schwarz, $2.03\sqrt A+2.87\sqrt{\theta B}\le c_4\sqrt M$ with $c_4=\sqrt{2.03^2+2\cdot2.87^2}\le4.5382$.
+With $x=\sqrt M/\sigma$, Lemma~\ref{lem:EF1} gives $|\BF+R_3|\le\sigma^2(7.77+c_4x)$, and $\frac12x^2-c_4x-7.77$ increases for $x\ge c_4$ and equals $0.2028\ldots>0$ at $x=\sqrt{112}$.
+Insert $|\BF+R_3|\le\frac12M\le\frac12(2\Aw+\Nphi)$ into~\eqref{eq:branch}.
+\end{proof}
+
+So the remainder never needs to be small: it needs to be at most half of the main terms, and that is automatic as soon as the information is not of order $\sigma^2$.
+The rest of this section bounds $(a)+(a')$ from below outside $\Oset$ and bounds $B$ inside $\Oset$.
+Both use the window inequality of Paper~F's Theorem~AT2 with the weight $\psi_{\rm AT}=\sqrt2\sin m_z$ of the working record, and the coefficient
+\begin{equation}
+\tilde C_w=\E\big[\st_v^2\cos m_z\,(1-\Ht_{ww}-\Ht_{vw})\big]/B .
+\end{equation}
+
+\begin{lemma}[Window inequality]\label{lem:window}
+For every state, $\sigma^2\tilde C_w^2B^2\le16\,\theta B\,\keff^2A$. Hence $D_{\rm F}=2\sqrt{2\Aw\Nphi}\ge\sqrt{2A\theta B}\ge\sigma|\tilde C_w|B/(2\sqrt2\,\keff)$.
+\end{lemma}
+\begin{proof}\proofst\
+Raw coordinates. Let $f=s_v\sqrt\varrho=2\partial_v\sqrt\varrho$.
+Since $\partial_wm_z=(1-\sigma^2(H_{ww}+H_{vw}))/\sqrt2$, $\partial_w\psi_{\rm AT}=\cos m_z(1-\sigma^2(H_{ww}+H_{vw}))$ and $\int f^2\partial_w\psi_{\rm AT}=\tilde C_w\Jvv$.
+Lemma~\ref{lem:ibp} gives $\int f^2\partial_w\psi_{\rm AT}=-2\int\psi_{\rm AT}f\partial_wf$, and Cauchy--Schwarz gives $(\tilde C_w\Jvv)^2\le4\int\psi_{\rm AT}^2f^2\int(\partial_wf)^2$.
+Here $\psi_{\rm AT}^2=2\varphi(2-\varphi)\le4\varphi$, so $\int\psi_{\rm AT}^2f^2\le4\E[s_v^2\varphi]$; and $\int(\partial_wf)^2=4\int(\partial_v\partial_w\sqrt\varrho)^2=\keff^2\Jww/\sigma^2$ by the definition of $\keff$.
+In dimensionless form ($\Jvv=B/\sigma^2$, $\E[s_v^2\varphi]=\theta B/\sigma^2$, $\Jww=A/\sigma^2$): $\tilde C_w^2B^2/\sigma^4\le16(\theta B/\sigma^2)(\keff^2A/\sigma^4)$.
+Finally $D_{\rm F}=2\sqrt{\Aw\theta B}$ and $\Aw\ge A/2$.
+\end{proof}
+
+\begin{lemma}[The coefficient $\tilde C_w$]\label{lem:EEC}
+For every state, $\tilde C_w\ge1-(A+1.291\sqrt A)/B-8.4258\sqrt{\theta/B}$.
+\proofst\ (App.~\ref{app:borrowed}.)
+\end{lemma}
+
+\begin{lemma}[$v$-information inside $\Oset$]\label{lem:EFO}
+Let $\sigma\le10^{-3}$. If $M<112\sigma^2$, then $B\le\sigma\max(280,\,1268\,\keff)$.
+\end{lemma}
+\begin{proof}\proofst\
+Here $A<112\sigma^2$ and $\theta B<224\sigma^2$.
+Lemma~\ref{lem:EEC} gives $\tilde C_w>1-(112\sigma^2+1.291\sqrt{112}\,\sigma+8.4258\sqrt{224}\,\sigma)/B\ge1-140\sigma/B$.
+If $B\ge280\sigma$, then $\tilde C_w\ge\frac12$, and Lemma~\ref{lem:window} gives $\frac12\sigma B\le4\keff\sqrt{224\sigma^2\cdot112\sigma^2}$, i.e.\ $B\le8\sqrt{224\cdot112}\,\keff\sigma\le1267.2\,\keff\sigma$.
+\end{proof}
+
+\begin{proposition}[Outside $\Oset$]\label{prop:outside}
+Let \textup{(M1)}, \textup{(H2)}, $\sigma\le10^{-4}$ and $M\ge112\sigma^2$. Then $g$ is at least the bound of Theorem~\ref{thm:main}(a).
+\end{proposition}
+\begin{proof}\proofst\
+By Lemma~\ref{lem:EF2}, $g\ge\frac12((a)+(a'))$, and $(a)+(a')\ge M/(\sigma(A+B))$. Four regions, with $c_r=\sqrt{0.1}$ and $K_r=400$:
+(1) $A/(A+B)\ge2\sigma$: $(a)\ge A/(\sigma(A+B))\ge2$.
+(2) $\theta\ge2\sigma c_r/\sqrt\ell$: $M/(A+B)\ge\theta/2$ (as $\theta\le2$), so $(a)+(a')\ge c_r/\sqrt\ell$.
+(3) $A/(A+B)<2\sigma$, $\theta<2\sigma c_r/\sqrt\ell$, $B<K_r\sigma$: $A+B<B/(1-2\sigma)<K_r\sigma/(1-2\sigma)$, so $M/(\sigma(A+B))>112(1-2\sigma)/K_r=0.28(1-2\sigma)$.
+(4) $A/(A+B)<2\sigma$, $\theta<2\sigma c_r/\sqrt\ell$, $B\ge K_r\sigma$: $(a)+(a')\ge2\sqrt{(a)(a')}=D_{\rm F}/(\sigma(A+B))\ge\frac{B}{A+B}\,\frac{|\tilde C_w|}{2\sqrt2\keff}$ (Lemma~\ref{lem:window}), with $B/(A+B)>1-2\sigma$.
+Lemma~\ref{lem:EEC} with $A/B<2\sigma/(1-2\sigma)$, $\sqrt A/B\le\sqrt{2/((1-2\sigma)K_r)}$ and $\theta/B<2c_r/(K_r\sqrt\ell)$ gives $\tilde C_w\ge1-\beta'$, $\beta'=\frac{2\sigma}{1-2\sigma}+1.291\sqrt{\frac{2}{(1-2\sigma)K_r}}+8.4258\sqrt{\frac{2c_r}{K_r\sqrt\ell}}\le0.284$ for $\sigma\le10^{-4}$.
+Finally $\keff^2\le\psi(\max(\ln(1/A),4))\le\psi(\Lb)=\kb^2$ by Theorem~\ref{thm:circles}, the Cram\'er--Rao floor $A\ge\alpha\sigma^2$ (Lemma~\ref{lem:CR}), and the monotonicity of $\psi$.
+\end{proof}
+
+\paragraph*{Numerical check.}
+On $492$ recorded engine states outside $\Oset$, $|\BF+R_3|\le M/2$ holds with a margin of at least $0.99998$ in units of $M/2$ \numst; on the $481$ of them with $\sigma\le10^{-4}$ and (H2), $g$ exceeds the bound of Theorem~\ref{thm:main}(a) by a factor of at least $1809$.
+None of the recorded states falls in region~(3).

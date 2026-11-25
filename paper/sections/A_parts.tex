@@ -1,0 +1,57 @@
+\section{Integration by parts, Tweedie, and the gap formula}
+\label{app:parts}
+
+Raw coordinates; $\rho$ is any probability measure.
+
+\begin{lemma}[Integration by parts]\label{lem:ibp}
+(i) Let $G(y)=\Psi(y)\prod_j\E[q_j(Z)\mid Y=y]$ with polynomials $q_j$ and a $C^1$ function $\Psi$ such that $\Psi$ and $\nabla\Psi$ are bounded by constants times such products, or a finite sum of such $G$.
+Then $\varrho G\in L^1$, and $\partial_i(\varrho G)$ is bounded by a finite sum of terms of the same form, hence lies in $L^1$; so $\varrho G\in W^{1,1}(\mathbb R^2)$ and $\int\partial_i(\varrho G)\,dy=0$.
+(ii) Under \textup{(M1)}, for every affine function $\ell(y)$, $\ell\varrho\in W^{1,1}$ and $\E[s_i\ell(Y)]=-\partial_i\ell$.
+\end{lemma}
+\begin{proof}\proofst\
+(i) $\varrho(y)\E[q(Z)\mid y]=\int q((y-x)/\sigma)\gaussk_{\sigma^2}(y-x)\,d\rho(x)$; the integrand is smooth in $y$ and its derivatives are polynomials times a Gaussian, so differentiation under the integral gives $\partial_{y_i}[\varrho\E[q\mid y]]=(\varrho/\sigma)\E[\partial_iq-Z_iq\mid y]$.
+So $\partial_i(\varrho G)$ is a finite sum of terms $\varrho\,\tilde\Psi\prod_j\E[\tilde q_j\mid y]$ with $|\tilde\Psi|$ bounded by products of the same kind (this is where $\nabla\Psi$ enters; we do not claim that the class is closed under differentiation).
+Since $Z\sim N(0,I)$ whatever $\rho$ is, H\"older and Jensen give $\int\varrho|\prod_{j\le n}\E[q_j\mid y]|\le\prod_j\|q_j(Z)\|_{L^n}<\infty$.
+For $f\in W^{1,1}$, a smooth cut-off $\chi_R(y)=\chi(y/R)$ gives $\int\chi_R\partial_if=-\int f\partial_i\chi_R\to0$, and the left side tends to $\int\partial_if$.
+(ii) $|\partial_i\varrho(y)|\le\int(|y_i-x_i|/\sigma^2)\gaussk_{\sigma^2}(y-x)\,d\rho(x)$, so $\int|\ell||\partial_i\varrho|\le\int d\rho(x)\int(|\ell(x)|+|\ell(u)-\ell(0)|+|\ell(0)|)(|u_i|/\sigma^2)\gaussk_{\sigma^2}(u)\,du<\infty$ by (M1); similarly $\int|\ell|\varrho<\infty$.
+Apply the cut-off argument to $\ell\varrho$.
+\end{proof}
+
+\begin{lemma}[Tweedie~\cite{Robbins,Efron}]\label{lem:tweedie}
+$\st=-\E[Z\mid Y]$, $\Ht=I-\Cov(Z\mid Y)$, $m=Y+\sigma^2s$, and $\sigma^2\partial_i\partial_j\varrho/\varrho=\E[Z_iZ_j\mid Y]-\delta_{ij}$; the posterior cumulants of $X$ of order $n\ge3$ are $\sigma^{2n}\partial^n\ln\varrho$; and $\Cov(X_p,F(X)\mid y)=\sigma^2\partial_p\E[F(X)\mid y]$ for $F$ bounded or of linear growth.
+\proofst\ (Differentiate $\gaussk_{\sigma^2}(y-x)$; for the last identity, $x_p\gaussk_{\sigma^2}(y-x)=(y_p+\sigma^2\partial_{y_p})\gaussk_{\sigma^2}(y-x)$.)
+\end{lemma}
+
+\begin{proposition}[Gap formula~\cite{E}]\label{prop:gap}
+Under \textup{(M1)}, $R$ is well defined, $A+B>0$, and
+\[
+\begin{aligned}
+\sigma(A+B)\,g&=2A+N,\\ N=\E[s_p\Dc]&=-\sigma^{-2}\E\big[\Cov(X_p,f_0(X_z)\mid Y)\big]\\ &=\E\big[s_p(Y)\,(f_0(X_z)-f_0(Y_z))\big],
+\end{aligned}
+\]
+with $f_0(x)=x-\sin x$ and $\Dc(y)=\E[f_0(X_z)\mid Y=y]$. Moreover $\E|\Cov(X_p,f_0(X_z)\mid Y)|\le2\sigma^2$.
+\end{proposition}
+\begin{proof}\proofst\
+$A+B=\sigma^2\E|s|^2>0$: $s\equiv0$ would make $\varrho$ constant, which is impossible for an integrable density.
+$\E[f(X)\mid y]=(m_p,\,m_z-\Dc)$ in the $(z,p)$ components, so $s\cdot\E[f\mid y]=s_zm_p+s_pm_z-s_p\Dc$.
+With $m=y+\sigma^2s$, $\E|s_zy_p|<\infty$ by the proof of Lemma~\ref{lem:ibp}(ii) and $\E|s_zs_p|\le\E|s|^2$; Lemma~\ref{lem:ibp}(ii) gives $\E[s_zy_p]=\E[s_py_z]=0$, so $\E[s_zm_p+s_pm_z]=2\sigma^2\E[s_zs_p]=\sigma^2(\Jvv-\Jww)$.
+Split $\Dc=\Psi+f_0(y_z)$ with $\Psi(y)=\E[f_0(X_z)-f_0(Y_z)\mid Y=y]$.
+Then $\E[s_pf_0(Y_z)]=\E[s_pY_z]-\E[s_p\sin Y_z]=0-0$, by Lemma~\ref{lem:ibp}(ii) and Lemma~\ref{lem:ibp}(i) ($\sin y_z$ is bounded, smooth, and independent of $p$).
+Since $|f_0'|\le2$, $|\Psi|\le2\sigma\E[|Z_z|\mid y]$, and $\varrho\Psi\in W^{1,1}$ by the argument of Lemma~\ref{lem:ibp}(i); so $N=\E[s_p\Psi]=-\E[\partial_p\Psi]$, and $\partial_p\Psi=\partial_p\Dc=\sigma^{-2}\Cov(X_p,f_0(X_z)\mid Y)$ by Lemma~\ref{lem:tweedie}.
+With $\kappa=1$ and $\sigma^2\E|s|^2=A+B$ this is the formula.
+Integrability: $f_0$ is $2$-Lipschitz, so $\Var(f_0(X_z)\mid Y)\le\E[(f_0(X_z)-f_0(Y_z))^2\mid Y]\le4\sigma^2\E[Z_z^2\mid Y]$; $\Var(X_p\mid Y)=\sigma^2\Var(Z_p\mid Y)\le\sigma^2\E[Z_p^2\mid Y]$; the conditional Cauchy--Schwarz inequality and then Cauchy--Schwarz in $Y$ give $\E|\Cov(X_p,f_0(X_z)\mid Y)|\le2\sigma^2(\E Z_z^2\,\E Z_p^2)^{1/2}=2\sigma^2$.
+\end{proof}
+
+\begin{proposition}[Branch identity~\cite{E}]\label{prop:branch}
+Under \textup{(M1)}, \eqref{eq:branch} holds with $R_3=N-\sigma^2\E[H_{pz}\varphi]$ and $\BF=\frac12\sigma^2\E[s_v\partial_v\varphi-s_w\partial_w\varphi]$ (raw $H$, $s$). With $D_{\rm F}=2\sqrt{2\Aw\Nphi}=2\sigma(A+B)\sqrt{(a)(a')}$, $g=(a)+(a')-2\varepsilon\sqrt{(a)(a')}$ where $\varepsilon=-(\BF+R_3)/D_{\rm F}$.
+\end{proposition}
+\begin{proof}\proofst\
+$H_{pz}=\frac12(H_{vv}-H_{ww})$, and by Lemma~\ref{lem:ibp}(i) $\E[H_{vv}\varphi]=\E[s_v^2\varphi]+\E[s_v\partial_v\varphi]$ ($\varphi$ is bounded and of the admissible form), and likewise for $w$. Add to $2A$ of Proposition~\ref{prop:gap}.
+\end{proof}
+
+\begin{lemma}[Cram\'er--Rao floor~\cite{Cramer,Rao}]\label{lem:CR}
+Under \textup{(M1)} and \textup{(H2)}, $A\ge\alpha\sigma^2$ with $\alpha=1/(2(\pi^2+\sigma^2))$; hence $\ln(1/A)\le\Lb$. Likewise $\sigma^2J_{zz}\ge2\alpha\sigma^2$.
+\end{lemma}
+\begin{proof}\proofst\
+By Lemma~\ref{lem:ibp}(ii), $\E[s_w(Y_z-\E Y_z)]=-\partial_wy_z=-1/\sqrt2$; Cauchy--Schwarz gives $\frac12\le\Jww\Var(Y_z)$, and $\Var(Y_z)=\Var(X_z)+\sigma^2\le\pi^2+\sigma^2$. For $J_{zz}$, $\E[s_z(Y_z-\E Y_z)]=-1$.
+\end{proof}

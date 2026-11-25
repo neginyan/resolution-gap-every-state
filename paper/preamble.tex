@@ -1,0 +1,58 @@
+% preamble.tex -- paper K (revtex4-2, aps, pre, twocolumn); the macros of papers F, H, I and J where they are shared
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\raggedbottom   % no vertical stretching around headings when a float moves to the next page
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+% theorem environments (one counter)
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% status labels (the spine of the paper)
+\newcommand{\status}[1]{\textsf{[#1]}}
+\newcommand{\proofst}{\status{proof}}
+\newcommand{\caproofst}[1]{\status{proof, computer-assisted: #1}}
+\newcommand{\derivst}{\status{derivation}}
+\newcommand{\numst}{\status{numerical}}
+\newcommand{\conjst}{\status{conjecture}}
+
+% notation
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Jvv}{J_{vv}}
+\newcommand{\Jww}{J_{ww}}
+\newcommand{\keff}{k_{\mathrm{eff}}}
+\newcommand{\kb}{\bar k}
+\newcommand{\Lb}{\bar L}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\st}{\tilde s}
+\newcommand{\Ht}{\tilde H}
+\newcommand{\gaussk}{\mathcal N}
+\newcommand{\Dc}{\mathcal D}
+\newcommand{\Oset}{\mathcal O}
+\newcommand{\Aw}{A_w}
+\newcommand{\Nphi}{N_\varphi}
+\newcommand{\BF}{B_{\mathrm F}}
+\newcommand{\Wzz}{W_{zz}}
+\newcommand{\hO}{h_{\mathcal O}}
+\newcommand{\code}[1]{\texttt{#1}}
+% DOIs
+\newcommand{\Edoi}{10.5281/zenodo.23617343}
+\newcommand{\Fdoi}{10.5281/zenodo.23746971}
+\newcommand{\Fcodedoi}{10.5281/zenodo.23746555}
+\newcommand{\Hdoi}{10.5281/zenodo.24369012}
+\newcommand{\Idoi}{10.5281/zenodo.24371173}
+\newcommand{\Icodedoi}{10.5281/zenodo.24370921}
+\newcommand{\Jdoi}{10.5281/zenodo.24418628}
+\newcommand{\Jcodedoi}{10.5281/zenodo.24418549}
+% the code of this paper (the DOI is filled in at publication)
+\newcommand{\Krepourl}{https://github.com/neginyan/resolution-gap-every-state}
+\newcommand{\Kcodedoi}{[code DOI to be added]}

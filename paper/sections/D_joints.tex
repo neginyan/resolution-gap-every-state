@@ -1,0 +1,25 @@
+\section{The joints on recorded states}
+\label{app:joints}
+
+A chain of correct lemmas can still be wrong at a joint: a power of $\sigma$ lost between two units, a constant rounded the wrong way, an assumption that is not carried.
+We therefore evaluated every joint numerically \numst.
+At each joint the conclusion of one part is computed on a state and inserted into the hypothesis of the next.
+The states are the recorded states of the lab stages behind this paper:
+\begin{itemize}
+\item $692$ states of Paper~F's engine (exact point fields), of which $200$ lie inside $\Oset$;
+\item $2449$ two-dimensional states with closed-form fields (tilted ripples, tori, lattices, valley mixtures, atoms);
+\item $2921$ one-variable states of the form $q=(m\mu)*\gaussk$.
+\end{itemize}
+Table~\ref{tab:joints} quotes the rows of the record \code{results\_EH/eh\_joints.json} verbatim, with the lab names of the parts.
+The lab names map to this paper as follows: EF-1, EF-2, EF-O, EE-C are Lemmas~\ref{lem:EF1}, \ref{lem:EF2}, \ref{lem:EFO}, \ref{lem:EEC}; EF-3(b) is Lemma~\ref{lem:window}; ED lemma~3 and the half lemma are Lemma~\ref{lem:K}; EE-3 is Lemma~\ref{lem:CR}; Theorem~EG-1 is Theorem~\ref{thm:circles}; EG-D, EG-iso, EG-sm, EG-O are Lemmas~\ref{lem:EGD}, \ref{lem:iso}, \ref{lem:sm} and Theorem~\ref{thm:EGO}; Theorem~EF(I) is Proposition~\ref{prop:outside}; Theorem~EG is Theorem~\ref{thm:main}.
+
+No joint fails.
+Three remarks on how the numbers are read.
+(i) In the engine the remainder $\BF+R_3$ is taken from the engine's own $\varepsilon$ ($\BF+R_3=-\varepsilon D_{\rm F}$).
+Taken instead as $\sigma(A+B)g-(2\Aw+\Nphi)$, it would include the quadrature defect of the engine, which is up to $0.5\%$ of the main terms (row J1).
+At $\sigma=10^{-24}$ that defect is far larger than $\sigma^2$.
+(ii) Row J7 checks an identity that is proved; it measures the accuracy of the sums.
+(iii) Row J18 is the window inequality without the factor $\sigma^2$, as it was once written in the working record; it fails by a factor of $9\times10^{71}$, which shows that the check can see a lost power of $\sigma$.
+The recorded states inside $\Oset$ all have $\sigma\ge10^{-6}$ (the engine states at $\sigma=10^{-12},10^{-24},10^{-36}$ lie outside $\Oset$), so the step ``$J\le J_0$ inside $\Oset$'' of Theorem~\ref{thm:main}(b) is checked only by interval arithmetic; nor do they hold a state in region~(3) of Proposition~\ref{prop:outside}.
+
+\input{sections/D_table}

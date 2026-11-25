@@ -1,0 +1,121 @@
+\section{The effective wavenumber of every state}
+\label{sec:circles}
+
+Throughout this section we use units $\sigma=1$: $\tilde\rho$ is the law of $X/\sigma$ and the noise is $N(0,I_2)$.
+For $\operatorname{Re}t>0$ let $\gaussk_t(u)=(2\pi t)^{-1/2}e^{-u^2/(2t)}$ (principal square root), and
+\begin{equation}
+\varrho_t(v,w)=\int\gaussk_t(v-x_v)\,\gaussk_1(w-x_w)\,d\tilde\rho(x),\qquad q_t=\partial_w\varrho_t ,
+\end{equation}
+the density with $v$-noise of variance $t$ and $w$-noise of variance one.
+For $t>0$ let $F(t)=\int q_t^2/\varrho_t$ be the $w$-information at $v$-noise $t$; then $F(1)=A$, and we write $L=\ln(1/A)$.
+With $Q_2=\E[(\E[Z_vZ_w\mid Y])^2]$, $\mathrm{SV}=\E[\st_w^2\Var(Z_v\mid Y)]$ and $\mathrm{S2}=\E[\st_v^2\st_w^2]$:
+
+\begin{lemma}[Identities and the half lemma]\label{lem:K}
+For every state,
+$K=Q_2+\tfrac12\mathrm{SV}-\tfrac12A-\tfrac14\mathrm{S2}\le Q_2+\tfrac12\mathrm{SV}$, and $\mathrm{SV}\le8AL+7.136A$.
+\proofst\ (App.~\ref{app:borrowed}.)
+\end{lemma}
+
+\begin{lemma}[Smoothing]\label{lem:smooth}
+For every state and every $u\in(0,1)$, $Q_2\le F(1-u)/u$.
+\end{lemma}
+\begin{proof}\proofst\
+Split $Z_v=\sqrt{1-u}\,Z_1+\sqrt u\,Z_2$ with $Z_1,Z_2$ independent standard normal, and let $Y'=(X_v+\sqrt{1-u}Z_1,\,Y_w)$, whose density is $\varrho_{1-u}$; then $Y=Y'+(\sqrt uZ_2,0)$.
+Since $(Z_1,Z_2)$ is independent of $(X,Z_w)$, $\E[Z_2\mid X,Z_w,Z_v]=\sqrt u\,Z_v$, and the tower property gives $\E[Z_2Z_w\mid Y]=\sqrt u\,\E[Z_vZ_w\mid Y]$.
+Since $Y$ is a function of $(Y',Z_2)$ and $Z_2$ is independent of $(X,Z_1,Z_w)$, also $\E[Z_2Z_w\mid Y]=\E[Z_2\,h(Y')\mid Y]$ with $h(y')=\E[Z_w\mid Y'=y']=-\partial_w\ln\varrho_{1-u}(y')$.
+By Jensen and $Z_2\perp Y'$, $Q_2\le u^{-1}\E[Z_2^2]\,\E[h(Y')^2]=F(1-u)/u$.
+\end{proof}
+
+So $\keff^2$ is controlled once $F$ cannot grow fast when the $v$-noise is lowered from $1$ to $1-u$.
+For a general state $F(1-u)$ can exceed $F(1)$ by a large factor, but not when $u$ is small compared with $1/\ln(1/A)$.
+The tool is Hadamard's three-circle theorem~\cite{Conway,Titchmarsh} in the Hilbert space $H_T=L^2(dy/\varrho_T)$.
+The argument was proposed by Google Gemini, one of the AI assistants used in this work (see the Acknowledgments); we give it with its constants and with the integrability it needs.
+
+\begin{lemma}[Kernel integrals]\label{lem:kernel}
+Let $T>0$ and $|z-T|=r<T$. Then $\int|\gaussk_z|^2/\gaussk_T\,du=(1-(r/T)^2)^{-1/2}$ and $\int u^2|\gaussk_z|^2/\gaussk_T\,du=(1-(r/T)^2)^{-1/2}\,T|z|^2/(T^2-r^2)$.
+\end{lemma}
+\begin{proof}\proofst\
+$|\gaussk_z(u)|^2=(2\pi|z|)^{-1}e^{-u^2\operatorname{Re}z/|z|^2}$, so $|\gaussk_z|^2/\gaussk_T=\frac{\sqrt T}{\sqrt{2\pi}|z|}\exp\!\big(-u^2\frac{2T\operatorname{Re}z-|z|^2}{2T|z|^2}\big)$.
+For $z=T+re^{i\vartheta_0}$, $2T\operatorname{Re}z-|z|^2=T^2-r^2$ for every angle; both integrals are Gaussian with variance $T|z|^2/(T^2-r^2)$.
+\end{proof}
+
+\begin{lemma}[Outer and inner circles]\label{lem:circles}
+(i) If $|z-T|=r<T$, then $\|q_z\|^2_{H_T}\le(1-(r/T)^2)^{-1/2}$.
+(ii) If $T=1+\delta$ and $|z-T|=r<\delta$, then $\|q_z\|^2_{H_T}\le A\,(1-(r/\delta)^2)^{-1/2}$.
+\end{lemma}
+\begin{proof}\proofst\
+(i) $q_z(y)=-\int\gaussk_z(v-x_v)(w-x_w)\gaussk_1(w-x_w)\,d\tilde\rho(x)$.
+Cauchy--Schwarz in $\tilde\rho$ with the weight $\sqrt{\gaussk_T\gaussk_1}$ gives $|q_z|^2\le\varrho_T\int(|\gaussk_z|^2/\gaussk_T)(v-x_v)\,(w-x_w)^2\gaussk_1(w-x_w)\,d\tilde\rho$; divide by $\varrho_T$, integrate in $y$ (Tonelli), and use $\int w'^2\gaussk_1=1$ and Lemma~\ref{lem:kernel}.
+(ii) $\operatorname{Re}(z-1)\ge\delta-r>0$.
+The semigroup law $\gaussk_{a+b}=\gaussk_a*\gaussk_b$ holds for $\operatorname{Re}a,\operatorname{Re}b>0$ (both sides are holomorphic in $a$ and agree for real $a$), so $q_z=\gaussk_{z-1}*_vq_1$ and $\varrho_T=\gaussk_\delta*_v\varrho_1$.
+For fixed $w$, Cauchy--Schwarz in $v'$ with the weight $\gaussk_\delta(v-v')\varrho_1(v',w)$ gives $|q_z|^2\le\varrho_T\int(|\gaussk_{z-1}|^2/\gaussk_\delta)(v-v')\,q_1^2/\varrho_1\,dv'$; divide, integrate, and use Lemma~\ref{lem:kernel} for $(\delta,z-1)$ and $\int q_1^2/\varrho_1=A$.
+\end{proof}
+
+\begin{lemma}[Holomorphy and three circles]\label{lem:holo}
+Let $\mathfrak D=\{|z-T|<T\}$.
+(i) For each $\chi\in H_T$, $f_\chi(z)=\int\bar\chi\,q_z/\varrho_T\,dy$ is holomorphic on $\mathfrak D$.
+(ii) If $0<r_1<r_2<r_3<T$ and $|z_2-T|=r_2$, then $\|q_{z_2}\|\le(\sup_{|z-T|=r_1}\|q_z\|)^{1-\vartheta}(\sup_{|z-T|=r_3}\|q_z\|)^{\vartheta}$ with $\vartheta=\ln(r_2/r_1)/\ln(r_3/r_1)$.
+\end{lemma}
+\begin{proof}\proofst\
+(i) Let $\mathcal K\subset\mathfrak D$ be compact.
+On $\mathcal K$, $r=|z-T|\le r_{\mathcal K}<T$ and $|z|$ lies between two positive constants, so by the formula in the proof of Lemma~\ref{lem:kernel},
+\[
+|\gaussk_z(u)|^2/\gaussk_T(u)\le C_{\mathcal K}\,e^{-c_{\mathcal K}u^2},\qquad c_{\mathcal K}=\min_{\mathcal K}\frac{T^2-r^2}{2T|z|^2}>0 .
+\]
+Let $G_{\mathcal K}(y)=C_{\mathcal K}\int e^{-c_{\mathcal K}(v-x_v)^2}(w-x_w)^2\gaussk_1(w-x_w)\,d\tilde\rho(x)$; it does not depend on $z$, and $\int G_{\mathcal K}\,dy=C_{\mathcal K}\sqrt{\pi/c_{\mathcal K}}<\infty$.
+The Cauchy--Schwarz step of Lemma~\ref{lem:circles}(i) gives $|q_z|^2\le\varrho_TG_{\mathcal K}$ for every $z\in\mathcal K$, hence
+\[
+\begin{gathered}
+|\bar\chi\,q_z/\varrho_T|\le(|\chi|/\sqrt{\varrho_T})\sqrt{G_{\mathcal K}}\in L^1,\\ \sup_{z\in\mathcal K}\|q_z\|_{H_T}^2\le\|G_{\mathcal K}\|_{L^1}.
+\end{gathered}
+\]
+For each $y$, $z\mapsto q_z(y)$ is holomorphic on $\operatorname{Re}z>0$ (the integrand is holomorphic in $z$ and bounded on compact sets uniformly in $x$), so $\oint_{\partial\Delta}q_z(y)\,dz=0$ for every triangle $\Delta\subset\mathfrak D$ by Cauchy's theorem.
+By the dominating function and Fubini, $\oint_{\partial\Delta}f_\chi\,dz=\int(\bar\chi/\varrho_T)\oint_{\partial\Delta}q_z\,dz\,dy=0$, and $f_\chi$ is continuous by dominated convergence; Morera's theorem gives (i).
+(ii) Hadamard's three-circle theorem for $f_\chi$ with $\|\chi\|=1$, $|f_\chi(z)|\le\|q_z\|$, and the supremum over $\chi$.
+\end{proof}
+
+\begin{theorem}[The effective wavenumber of every state]\label{thm:circles}
+Let $A\le e^{-4}$, $L=\ln(1/A)$, and
+\[
+\begin{gathered}
+\delta=\tfrac1{4L},\quad T=1+\delta,\quad \eta=\tfrac{\ln2L}{4L},\quad \tau=\tfrac{\ln2L}{8L^2},\\ r_1=\delta(1-\eta),\quad r_2=\delta+\tau,\quad r_3=\tfrac T2 .
+\end{gathered}
+\]
+Then
+(i) $\|q_{1-\tau}\|^2_{H_T}\le\frac{4e}{\sqrt3}\sqrt{L/\ln2L}\;A$;
+(ii) $F(1-\tau)\le36.1\sqrt{L/\ln2L}\;A$;
+(iii) $Q_2\le289\,A\,L^{5/2}/(\ln2L)^{3/2}$;
+(iv) $\keff^2\le\psi(L)$.
+(v) If $A>e^{-4}$, $\keff^2\le74.2\le\psi(4)$.
+So \emph{every} state has $\keff^2\le\psi(\max(\ln(1/A),4))$.
+\end{theorem}
+\begin{proof}\proofst\
+\emph{Numbers.} For $L\ge4$: $\eta\le0.12997$, $\tau\le0.016246$, $\delta\le1/16$ (all decrease in $L$), so $r_1<r_2<r_3<T$, the point $1-\tau$ lies on the circle $|z-T|=r_2$, and $\operatorname{Re}z\ge T/2$ on $|z-T|\le r_3$.
+\emph{Circles.} Lemma~\ref{lem:circles}(i) with $r=T/2$ gives $\sup\|q_z\|^2\le2/\sqrt3$ on the outer circle; Lemma~\ref{lem:circles}(ii) with $r=r_1$ gives $\le A/\sqrt{2\eta-\eta^2}\le A/\sqrt\eta$ on the inner circle.
+\emph{The exponent.} $r_3/r_1=2L(1+\delta)/(1-\eta)>2L$, and $\ln(r_2/r_1)=\ln(1+\tau/\delta)-\ln(1-\eta)\le\tau/\delta+2\eta=\ln(2L)/L$ (for $\eta\le0.13$, $-\ln(1-\eta)\le2\eta$); so $\vartheta<1/L$.
+\emph{(i).} By Lemma~\ref{lem:holo}, $\|q_{1-\tau}\|^2\le(A/\sqrt\eta)^{1-\vartheta}(2/\sqrt3)^{\vartheta}\le e\,A\,\eta^{-1/2}\,2/\sqrt3$, since $A^{-\vartheta}=e^{\vartheta L}<e$; and $\eta^{-1/2}=2\sqrt{L/\ln2L}$.
+\emph{Back to the weight $1/\varrho_{1-\tau}$.} With $u=\sqrt T\zeta$, $\gaussk_{1-\tau}(u)/\gaussk_T(u)=c_Te^{-\omega\zeta^2}$, where $c_T=\sqrt{T/(1-\tau)}$ and $\omega=(\tau+\delta)/(2(1-\tau))$.
+Hence, exactly, $\varrho_{1-\tau}=c_T\varrho_TW_T$ and $q_{1-\tau}=-c_T\varrho_T\E[Z_we^{-\omega Z_v^2}\mid Y_T]$, with $W_T(y)=\E[e^{-\omega Z_v^2}\mid Y_T=y]$, $Y_T=(X_v+\sqrt TZ_v,X_w+Z_w)$.
+For $L\ge4$, $\omega<1/(4L)$, since this is equivalent to $\ln(2L)(1+1/(2L))<2L$.
+Let $K_b^2=4L$, so $\omega K_b^2<1$, and $E_{\rm bad}=\{W_T<1/(2e)\}$.
+As $W_T\ge e^{-\omega K_b^2}P(|Z_v|\le K_b\mid y)>e^{-1}P(|Z_v|\le K_b\mid y)$, on $E_{\rm bad}$ one has $P(|Z_v|>K_b\mid y)>\frac12$, and Markov's inequality gives $P_T(E_{\rm bad})\le2P(|Z_v|>K_b)\le2e^{-2L}=2A^2$.
+The conditional Cauchy--Schwarz inequality gives $q_{1-\tau}^2/\varrho_{1-\tau}\le c_T\varrho_T\E[Z_w^2\mid Y_T]$ at every $y$, so the contribution of $E_{\rm bad}$ to $F(1-\tau)$ is at most $c_T\sqrt{2A^2}\sqrt{\E Z_w^4}=\sqrt{6T/(1-\tau)}\,A\le2.55A$.
+Outside $E_{\rm bad}$, $\varrho_{1-\tau}\ge c_T\varrho_T/(2e)$ and $c_T>1$, so the contribution is at most $2e\|q_{1-\tau}\|^2_{H_T}\le34.13\sqrt{L/\ln2L}\,A$.
+Since $\sqrt{L/\ln2L}$ increases and is $1.38693\ldots$ at $L=4$, the sum is at most $36.1\sqrt{L/\ln2L}\,A$; this is (ii).
+\emph{(iii)} is Lemma~\ref{lem:smooth} with $u=\tau$, $1/\tau=8L^2/\ln2L$ and $36.1\cdot8\le289$.
+\emph{(iv)} follows from Lemma~\ref{lem:K}: $\keff^2=K/A\le Q_2/A+4L+3.568$.
+\emph{(v)} Jensen gives $Q_2\le\E[Z_v^2Z_w^2]=1$, so $Q_2/A<e^4$, and $\frac12\mathrm{SV}/A<19.57$ for $L<4$; $e^4+19.57<74.17\le\psi(4)=3103.7$, and $\psi$ increases on $[4,\infty)$.
+\end{proof}
+
+\begin{remark}[The choice of $\delta$]\label{rem:delta}
+$\delta=1/(4L)$ is one sufficient choice, not a forced one.
+The return step needs only $\omega K_b^2<1$; for instance $\delta=0.4/L$ gives $\omega K_b^2=(0.8+\ln(2L)/(4L))/(1-\tau)=0.9453$ at $L=4$ \proofst, with other constants.
+We have not optimized the choice.
+What the argument does need is that $\delta\ln(1/A)$ stays bounded: a $v$-noise of order one would fill the valleys of $\varrho_1$ and the weight $1/\varrho_T$ could not be turned back into $1/\varrho_{1-\tau}$.
+That is why the theorem gives $\tau\sim\ln L/L^2$ instead of $1/L$, and the power $L^{5/2}$ instead of $L$ (Section~\ref{sec:outlook}).
+\end{remark}
+
+\paragraph*{Numerical check.}
+Every step of the proof was evaluated on recorded states, the points of the outer and inner circles included \numst: $1441$ two-dimensional states with closed-form fields in complex time ($889$ of them with $L\ge4$), the conclusions (ii)--(iv) on $2449$ two-dimensional states, and $2921$ one-variable states in the form $q=(m\mu)*\gaussk$.
+No step fails; the smallest margins $\ln(\text{right}/\text{left})$ are $0.702$ (inner circle) and $1.498$ (three circles), and $\vartheta L\le0.75$.
+The actual $F(1-\tau)/A$ is at most $1.06$, so (ii) is far from tight at this $\tau$; the theorem is limited by how far the noise can be lowered, not by the factor.

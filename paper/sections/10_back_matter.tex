@@ -1,0 +1,11 @@
+\begin{acknowledgments}
+The author used AI assistants in this work. Anthropic Claude (claude-fable-5-2 and claude-opus-5-5) searched for counterexamples, proved the lemmas of the chain, wrote the verification code and the interval arithmetic, and drafted the text; a separate session re-ran and checked every stage. Google Gemini (Gemini 4 Neon) proposed several key steps of the proof, among them the counterexample that redirected the target inequality, the identities linking the second-order quantities, the bound on the remainder of Paper~F's expansion, and the three-circle argument in complex time together with its isotropic form for the open region. Google Gemini (Gemini 4 Neon) and OpenAI ChatGPT (GPT-6 Sol) independently reviewed the manuscript and re-derived its main steps; their comments led to explicit integrability bounds, a written-out dominating function for the holomorphy argument, and corrected statements of several inequalities. The author directed the research, made all decisions on its content, and takes full responsibility for this article.
+\end{acknowledgments}
+
+\emph{Data and code availability.}
+All code, stored results, the interval-arithmetic computations and the verification suite are available at \url{\Krepourl} and archived at Zenodo, doi:\Kcodedoi.
+A single entry point, \code{verification/run\_all.py}, re-runs the checks of this paper and re-derives its printed numbers from the stored results; \code{verification/quick.py} is a short check that runs in under a minute.
+Some modules use the published repository of Paper~F~\cite{Fcode}, which is not copied; Papers~E, F, H, I and~J and their repositories are not changed.
+
+\paragraph*{Version~1.0.}
+First version.

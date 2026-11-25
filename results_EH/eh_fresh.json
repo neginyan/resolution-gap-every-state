@@ -1,0 +1,38 @@
+{
+ "rows": [
+  {
+   "record": "ef_wide_0.0001_gsl.json",
+   "family": "W",
+   "sigma": 0.0001,
+   "g": 457.870689914435,
+   "equal_to_record": true
+  },
+  {
+   "record": "ef_wide_0.0001_absN_plant_w0.6.json",
+   "family": "N",
+   "sigma": 0.0001,
+   "g": 84.17935548108588,
+   "equal_to_record": true
+  },
+  {
+   "record": "ef_wide_0.0001_gslM.json",
+   "family": "M",
+   "sigma": 0.0001,
+   "g": 3.9809090714965074,
+   "equal_to_record": true
+  },
+  {
+   "record": "ef_wide_1e-06_abs.json",
+   "family": "W",
+   "sigma": 1e-06,
+   "g": 1283117.07298595,
+   "equal_to_record": true
+  }
+ ],
+ "all_equal": true,
+ "env": {
+  "python": "3.13.18",
+  "numpy": "2.5.3"
+ },
+ "ok": true
+}
