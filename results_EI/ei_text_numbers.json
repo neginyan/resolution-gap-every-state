@@ -12,7 +12,7 @@
   "trunc": 5,
   "ub": 75
  },
- "n_numbers_in_text": 196,
+ "n_numbers_in_text": 197,
  "uncovered": [],
  "allow": [
   {
@@ -29,6 +29,11 @@
    "file": "E_verification",
    "number": "0.1",
    "reason": "c_r = sqrt(0.1), quoted as an example of a definition"
+  },
+  {
+   "file": "10_back_matter",
+   "number": "1.0",
+   "reason": "the version number of the first version, in the version paragraph"
   },
   {
    "file": "07_assembly",

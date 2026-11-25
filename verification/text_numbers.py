@@ -15,7 +15,7 @@ Two passes.
      True values come from results_EH/eh_constants.json and results_EI/ei_constants.json (outward-rounded intervals, 60 digits), from the records
      of the recorded states (results_EF, results_EG, results_EH, results_EI) and, for one entry, from verification/common.py.
  (2) An inventory: every number in the running text (decimal numbers, a x 10^k, 10^k and integers >= 10; the generated tables C_table, C_printed,
-     D_table and the references are not part of it) must be covered by an entry of (1) or by an entry of ALLOW (a definition, a label of a
+     D_table and the references are not part of it; nor are DOIs and arXiv numbers in the text) must be covered by an entry of (1) or by an entry of ALLOW (a definition, a label of a
      scenario, a layout width, an exact constant inside a formula), with its reason.
 Output results_EI/ei_text_numbers.json (ok = every entry holds, every context is found, every number is covered)."""
 import json, math, os, re, sys
@@ -340,6 +340,7 @@ ALLOW = [
     ('02_main_theorem', '0.1', 'c_r = sqrt(0.1): a choice of the proof (region boundaries of Proposition 15)'),
     ('05_outside', '0.1', 'c_r = sqrt(0.1): a choice'),
     ('E_verification', '0.1', 'c_r = sqrt(0.1), quoted as an example of a definition'),
+    ('10_back_matter', '1.0', 'the version number of the first version, in the version paragraph'),
     ('07_assembly', '10', 'labels of the scenarios C/10 of Table 2'),
     ('07_assembly', '100', 'labels of the scenarios C/100 of Table 2'),
     ('07_assembly', r'10^{-15}', 'the point at which (c) is evaluated (checked as cond in 02 and by c.* of ei_constants)'),
@@ -373,6 +374,7 @@ TOK = re.compile(r'(?<![\w.])(\d+\.\d+(?:\\ldots)?(?:\\times10\^\{-?\d+\})?|\d+\
 
 def tokens(tex):
     t = re.sub(r'(?m)(?<!\\)%.*$', '', tex)
+    t = re.sub(r'(?:doi|arXiv):[^\s,;)}]+', ' ', t)                      # DOIs and arXiv numbers are bibliographic, like the references
     t = re.sub(r'\\(?:ref|eqref|label|cite|input|includegraphics|code|url|href)\*?(?:\[[^\]]*\])?\{[^}]*\}', ' ', t)
     t = re.sub(r'\\[dt]?frac\d\d', ' ', t)                         # \frac12, \tfrac34: fractions of single digits
     t = t.replace(r'\times', '\x00').replace(r'\ldots', '\x01')
